@@ -5,9 +5,10 @@ import { App } from './app';
 import { Navbarcomponents } from './component/navbarcomponents/navbarcomponents';
 import { FormsModule } from '@angular/forms';
 import { Footercomponents } from './component/footercomponents/footercomponents';
+import { Paginaprincipalcomponent} from "./component/paginaprincipalcomponent/paginaprincipalcomponent";
 
 @NgModule({
-  declarations: [App, Navbarcomponents, Footercomponents],
+  declarations: [App, Paginaprincipalcomponent, Navbarcomponents, Footercomponents],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
