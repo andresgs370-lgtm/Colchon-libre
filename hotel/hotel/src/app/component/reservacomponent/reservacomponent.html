@@ -1,0 +1,85 @@
+@if (reservaCreada(); as r) {
+    <div class="card shadow-sm border-success text-center p-3 animate__animated animate__bounceIn" role="status">
+        <div class="card-body">
+            <i class="fa-solid fa-circle-check fs-1 text-success mb-2"></i>
+            <h5 class="fw-bold mb-1">¡Reserva confirmada!</h5>
+            <span class="badge bg-success mb-3">{{ r.estado }}</span>
+
+            <p class="text-muted small mb-1">Código de reserva</p>
+            <p class="fw-bold mb-3">{{ r.id }}</p>
+
+            <hr class="my-2">
+
+            <p class="small mb-1">
+                <i class="fa-solid fa-house"></i> {{ r.alojamientoNombre }} · {{ r.ciudad }}
+            </p>
+            <p class="small mb-2">{{ r.noches }} noche(s)</p>
+            <p class="mb-3">
+                <strong>Total:</strong>
+                <span class="text-primary fw-bold fs-5">{{ r.total | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}</span>
+            </p>
+
+            <a routerLink="/mis-reservas" class="btn btn-outline-primary w-100">Ver mis reservas</a>
+        </div>
+    </div>
+} @else {
+    <div class="card shadow-sm p-3 animate__animated animate__fadeInUp">
+        <div class="card-body">
+            <h5 class="fw-bold text-center mb-3">Confirma tu reserva</h5>
+
+            <div class="d-flex flex-wrap gap-1 justify-content-center mb-3">
+                <span class="badge bg-primary">{{ cotizacion().noches }} noche(s)</span>
+                <span class="badge bg-light text-dark border">{{ cotizacion().huespedes }} huésped(es)</span>
+            </div>
+
+            <p class="small mb-1">
+                <i class="fa-solid fa-calendar-days"></i>
+                {{ cotizacion().fechaLlegada | date: 'dd/MM/yyyy' }} → {{ cotizacion().fechaSalida | date: 'dd/MM/yyyy' }}
+            </p>
+            <p class="mb-3">
+                <strong>Total:</strong>
+                <span class="text-primary fw-bold fs-5">{{ cotizacion().total | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}</span>
+            </p>
+
+            <hr class="my-2">
+
+            <form [formGroup]="form" (ngSubmit)="confirmar()" novalidate>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label small fw-bold">Nombre del huésped</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+                        <input id="nombre" type="text" class="form-control" formControlName="nombre"
+                               [class.is-invalid]="nombre.invalid && nombre.touched" />
+                        @if (nombre.invalid && nombre.touched) {
+                            <div class="invalid-feedback">
+                                @if (nombre.hasError('required')) { El nombre es obligatorio. }
+                                @else { Mínimo 3 caracteres. }
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="correo" class="form-label small fw-bold">Correo electrónico</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+                        <input id="correo" type="email" class="form-control" formControlName="correo"
+                               [class.is-invalid]="correo.invalid && correo.touched" />
+                        @if (correo.invalid && correo.touched) {
+                            <div class="invalid-feedback">
+                                @if (correo.hasError('required')) { El correo es obligatorio. }
+                                @else { Ingresa un correo válido. }
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                @if (error()) {
+                    <div class="alert alert-danger small" role="alert">{{ error() }}</div>
+                }
+
+                <button type="submit" class="btn btn-primary w-100">Reservar</button>
+            </form>
+        </div>
+    </div>
+}
