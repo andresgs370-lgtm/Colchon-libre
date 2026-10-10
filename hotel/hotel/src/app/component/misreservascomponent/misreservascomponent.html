@@ -1,0 +1,42 @@
+<div class="container py-4">
+    <h1 class="fw-bold mb-4">Mis reservas</h1>
+
+    @if (reservas().length === 0) {
+        <div class="alert alert-info" role="status">
+            Aún no tienes reservas. <a routerLink="/" class="alert-link">Explora los alojamientos</a>
+            y reserva tu próxima estancia.
+        </div>
+    } @else {
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead>
+                <tr>
+                    <th>Alojamiento</th>
+                    <th>Ciudad</th>
+                    <th>Llegada</th>
+                    <th>Salida</th>
+                    <th>Huéspedes</th>
+                    <th>Total</th>
+                    <th>Estado</th>
+                </tr>
+                </thead>
+                <tbody>
+                    @for (r of reservas(); track r.id) {
+                        <tr>
+                            <td>
+                                <div class="fw-bold">{{ r.alojamientoNombre }}</div>
+                                <small class="text-muted">{{ r.id }}</small>
+                            </td>
+                            <td>{{ r.ciudad }}</td>
+                            <td>{{ r.fechaLlegada | date: 'dd/MM/yyyy' }}</td>
+                            <td>{{ r.fechaSalida | date: 'dd/MM/yyyy' }}</td>
+                            <td>{{ r.huespedes }}</td>
+                            <td>{{ r.total | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}</td>
+                            <td><span class="badge bg-success">{{ r.estado }}</span></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

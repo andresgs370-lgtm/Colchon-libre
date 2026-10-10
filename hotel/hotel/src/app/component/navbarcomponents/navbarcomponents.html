@@ -1,300 +1,301 @@
 <nav class="navbar">
 
-  <a href="#" class="logo">
-   Colchon libre
-  </a>
-
-  <div class="nav-links">
-
-    <a href="#">
-      Inicio
+    <a href="#" class="logo">
+        Colchon libre
+        <img class="imagotipo" src="/assets/imagotipo%20sin%20texto.png">
     </a>
 
-    <a href="#">
-      Alojamientos
-    </a>
+    <div class="nav-links">
 
-    <a href="#">
-      Servicios
-    </a>
+        <a href="#">
+            Inicio
+        </a>
 
-    <a href="#">
-      Contacto
-    </a>
+        <a href="#">
+            Alojamientos
+        </a>
 
-  </div>
+        <a href="#">
+            Servicios
+        </a>
 
-  <div class="nav-actions">
+        <a href="#">
+            Contacto
+        </a>
 
-    <a href="#" class="login">
-      Iniciar sesión
-    </a>
+    </div>
 
-    <a href="#" class="btn-reserva">
-      Reservar
-    </a>
+    <div class="nav-actions">
 
-  </div>
+        <a href="#" class="login">
+            Iniciar sesión
+        </a>
+        <li><a class="btn-reserva" routerLink="/mis-reservas" routerLinkActive="active">
+            Mis reservas
+        </a></li>
 
-  <button
-    type="button"
-    class="menu-btn"
-    (click)="toggleFiltros()"
-  >
-    ☰
-  </button>
+        <button
+                type="button"
+                class="menu-btn"
+                (click)="toggleFiltros()"
+        >
+            <i class="fa-solid fa-magnifying-glass" style="color: rgb(0 0 0);"></i>
+        </button>
+    </div>
+
+
 
 </nav>
 
 <div
-  class="filtros"
-  [class.mostrar]="mostrarFiltros"
+        class="filtros"
+        [class.mostrar]="mostrarFiltros"
 >
 
-  <h2>
-    Filtrar alojamientos
-  </h2>
+    <h2>
+        Filtrar alojamientos
+    </h2>
 
-  <div class="filtro">
+    <div class="filtro">
 
-    <label>
-      Imagen
-    </label>
+        <label>
+            Imagen
+        </label>
 
-    <input
-      type="file"
-      accept="image/*"
-    >
-
-  </div>
-
-  <div class="filtro">
-
-    <label for="nombre">
-      Nombre
-    </label>
-
-    <input
-      type="text"
-      id="nombre"
-      [(ngModel)]="nombre"
-      placeholder="Nombre del alojamiento"
-    >
-
-  </div>
-
-  <div class="filtro">
-
-    <label for="ciudad">
-      Ciudad
-    </label>
-
-    <input
-      type="text"
-      id="ciudad"
-      [(ngModel)]="ciudad"
-      placeholder="Ciudad"
-    >
-
-  </div>
-
-  <div class="filtro">
-
-    <label for="tipoAlojamiento">
-      Tipo de alojamiento
-    </label>
-
-    <select
-      id="tipoAlojamiento"
-      [(ngModel)]="tipoAlojamiento"
-    >
-
-      <option value="Todos">
-        Todos
-      </option>
-
-      <option value="Hotel">
-        Hotel
-      </option>
-
-      <option value="Apartamento">
-        Apartamento
-      </option>
-
-      <option value="Casa">
-        Casa
-      </option>
-
-    </select>
-
-  </div>
-
-  <div class="filtro">
-
-    <label for="capacidad">
-      Capacidad
-    </label>
-
-    <input
-      type="number"
-      id="capacidad"
-      [(ngModel)]="capacidad"
-      min="1"
-      placeholder="Número de personas"
-    >
-
-  </div>
-
-  <div class="filtro">
-
-    <label>
-      Precio por noche
-    </label>
-
-    <div class="precio">
-
-      <input
-        type="number"
-        [(ngModel)]="precioMinimo"
-        min="0"
-        placeholder="Mínimo"
-      >
-
-      <input
-        type="number"
-        [(ngModel)]="precioMaximo"
-        min="0"
-        placeholder="Máximo"
-      >
+        <input
+                type="file"
+                accept="image/*"
+        >
 
     </div>
 
-  </div>
+    <div class="filtro">
 
-  <div class="filtro">
-
-    <label for="calificacion">
-      Calificación
-    </label>
-
-    <select
-      id="calificacion"
-      [(ngModel)]="calificacion"
-    >
-
-      <option value="Todas">
-        Todas
-      </option>
-
-      <option value="5">
-        5 estrellas
-      </option>
-
-      <option value="4">
-        4 estrellas o más
-      </option>
-
-      <option value="3">
-        3 estrellas o más
-      </option>
-
-      <option value="2">
-        2 estrellas o más
-      </option>
-
-      <option value="1">
-        1 estrella o más
-      </option>
-
-    </select>
-
-  </div>
-
-  <div class="filtro">
-
-    <label>
-      Servicios disponibles
-    </label>
-
-    <div class="servicios">
-
-      <label>
+        <label for="nombre">
+            Nombre
+        </label>
 
         <input
-          type="checkbox"
-          [(ngModel)]="wifi"
+                type="text"
+                id="nombre"
+                [(ngModel)]="nombre"
+                placeholder="Nombre del alojamiento"
         >
-
-        WiFi
-
-      </label>
-
-      <label>
-
-        <input
-          type="checkbox"
-          [(ngModel)]="piscina"
-        >
-
-        Piscina
-
-      </label>
-
-      <label>
-
-        <input
-          type="checkbox"
-          [(ngModel)]="parqueadero"
-        >
-
-        Parqueadero
-
-      </label>
-
-      <label>
-
-        <input
-          type="checkbox"
-          [(ngModel)]="desayuno"
-        >
-
-        Desayuno
-
-      </label>
-
-      <label>
-
-        <input
-          type="checkbox"
-          [(ngModel)]="gimnasio"
-        >
-
-        Gimnasio
-
-      </label>
 
     </div>
 
-  </div>
+    <div class="filtro">
 
-  <div class="filtros-botones">
+        <label for="ciudad">
+            Ciudad
+        </label>
 
-    <button
-      type="button"
-      class="btn-aplicar"
-      (click)="aplicarFiltros()"
-    >
-      Aplicar filtros
-    </button>
+        <input
+                type="text"
+                id="ciudad"
+                [(ngModel)]="ciudad"
+                placeholder="Ciudad"
+        >
 
-    <button
-      type="button"
-      class="btn-limpiar"
-      (click)="limpiarFiltros()"
-    >
-      Limpiar
-    </button>
+    </div>
 
-  </div>
+    <div class="filtro">
+
+        <label for="tipoAlojamiento">
+            Tipo de alojamiento
+        </label>
+
+        <select
+                id="tipoAlojamiento"
+                [(ngModel)]="tipoAlojamiento"
+        >
+
+            <option value="Todos">
+                Todos
+            </option>
+
+            <option value="Hotel">
+                Hotel
+            </option>
+
+            <option value="Apartamento">
+                Apartamento
+            </option>
+
+            <option value="Casa">
+                Casa
+            </option>
+
+        </select>
+
+    </div>
+
+    <div class="filtro">
+
+        <label for="capacidad">
+            Capacidad
+        </label>
+
+        <input
+                type="number"
+                id="capacidad"
+                [(ngModel)]="capacidad"
+                min="1"
+                placeholder="Número de personas"
+        >
+
+    </div>
+
+    <div class="filtro">
+
+        <label>
+            Precio por noche
+        </label>
+
+        <div class="precio">
+
+            <input
+                    type="number"
+                    [(ngModel)]="precioMinimo"
+                    min="0"
+                    placeholder="Mínimo"
+            >
+
+            <input
+                    type="number"
+                    [(ngModel)]="precioMaximo"
+                    min="0"
+                    placeholder="Máximo"
+            >
+
+        </div>
+
+    </div>
+
+    <div class="filtro">
+
+        <label for="calificacion">
+            Calificación
+        </label>
+
+        <select
+                id="calificacion"
+                [(ngModel)]="calificacion"
+        >
+
+            <option value="Todas">
+                Todas
+            </option>
+
+            <option value="5">
+                5 estrellas
+            </option>
+
+            <option value="4">
+                4 estrellas o más
+            </option>
+
+            <option value="3">
+                3 estrellas o más
+            </option>
+
+            <option value="2">
+                2 estrellas o más
+            </option>
+
+            <option value="1">
+                1 estrella o más
+            </option>
+
+        </select>
+
+    </div>
+
+    <div class="filtro">
+
+        <label>
+            Servicios disponibles
+        </label>
+
+        <div class="servicios">
+
+            <label>
+
+                <input
+                        type="checkbox"
+                        [(ngModel)]="wifi"
+                >
+
+                WiFi
+
+            </label>
+
+            <label>
+
+                <input
+                        type="checkbox"
+                        [(ngModel)]="piscina"
+                >
+
+                Piscina
+
+            </label>
+
+            <label>
+
+                <input
+                        type="checkbox"
+                        [(ngModel)]="parqueadero"
+                >
+
+                Parqueadero
+
+            </label>
+
+            <label>
+
+                <input
+                        type="checkbox"
+                        [(ngModel)]="desayuno"
+                >
+
+                Desayuno
+
+            </label>
+
+            <label>
+
+                <input
+                        type="checkbox"
+                        [(ngModel)]="gimnasio"
+                >
+
+                Gimnasio
+
+            </label>
+
+        </div>
+
+    </div>
+
+    <div class="filtros-botones">
+
+        <button
+                type="button"
+                class="btn-aplicar"
+                (click)="aplicarFiltros()"
+        >
+            Aplicar filtros
+        </button>
+
+        <button
+                type="button"
+                class="btn-limpiar"
+                (click)="limpiarFiltros()"
+        >
+            Limpiar
+        </button>
+
+    </div>
 
 </div>
