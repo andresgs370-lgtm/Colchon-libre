@@ -16,6 +16,7 @@ export class Listadoalojamientoscomponent implements OnInit {
     cargando = true;
     error = false;
 
+    idAlojamiento: number | null = null;
     nombre = '';
     ciudad = '';
     tipoAlojamiento = 'Todos';
@@ -53,6 +54,12 @@ export class Listadoalojamientoscomponent implements OnInit {
 
     get alojamientosFiltrados(): Alojamiento[] {
         const filtros = this.filtroService.filtros();
+        if (filtros.idAlojamiento !== null) {
+            return this.alojamientos.filter(
+                alojamiento =>
+                    String(alojamiento.id) === String(filtros.idAlojamiento)
+            );
+        }
 
         return this.alojamientos.filter((alojamiento) => {
             const coincideNombre = alojamiento.nombre
@@ -115,6 +122,7 @@ export class Listadoalojamientoscomponent implements OnInit {
         if (this.gimnasio) servicios.push('Gimnasio');
 
         this.filtroService.aplicar({
+            idAlojamiento: this.idAlojamiento,
             nombre: this.nombre,
             ciudad: this.ciudad,
             tipo: this.tipoAlojamiento,
