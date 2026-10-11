@@ -8,12 +8,10 @@ export class AlojamientoService {
   private readonly http = inject(HttpClient);
   private readonly url = 'assets/data/marketplace-data.json';
 
-  /** Se lee el JSON una sola vez y se reutiliza. */
   private readonly datos$: Observable<MarketplaceData> = this.http
     .get<MarketplaceData>(this.url)
     .pipe(shareReplay(1));
 
-  /** Regla de negocio: nunca se exponen alojamientos inactivos. */
   getAlojamientos(): Observable<Alojamiento[]> {
     return this.datos$.pipe(
       map((d) => d.alojamientos.filter((a) => a.activo && a.precioNoche > 0))

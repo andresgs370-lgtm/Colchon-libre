@@ -1,0 +1,258 @@
+<div class="pagina-alojamientos">
+
+    <section class="encabezado-listado">
+        <p class="subtitulo">COLCHÓN LIBRE</p>
+        <h1>Encuentra tu próximo alojamiento</h1>
+        <p class="descripcion">
+            Explora lugares para descansar, viajar y disfrutar tu estadía.
+        </p>
+    </section>
+
+    <section class="panel-filtros">
+        <div class="titulo-filtros">
+            <div>
+                <h2>Filtrar alojamientos</h2>
+                <p>Personaliza tu búsqueda para encontrar el lugar ideal.</p>
+            </div>
+
+            <button
+                    type="button"
+                    class="btn-limpiar"
+                    (click)="limpiarFiltros()">
+                Limpiar filtros
+            </button>
+        </div>
+
+        <div class="campos-filtros">
+
+            <div class="campo">
+                <label for="ciudad">Ciudad</label>
+                <input
+                        id="ciudad"
+                        type="text"
+                        [(ngModel)]="ciudad"
+                        (ngModelChange)="aplicarFiltros()"
+                        placeholder="Ej. Bogotá">
+            </div>
+
+            <div class="campo">
+                <label for="capacidad">Número de huéspedes</label>
+                <input
+                        id="capacidad"
+                        type="number"
+                        min="1"
+                        [(ngModel)]="capacidad"
+                        (ngModelChange)="aplicarFiltros()">
+            </div>
+
+            <div class="campo">
+                <label for="tipoAlojamiento">Tipo de alojamiento</label>
+                <select
+                        id="tipoAlojamiento"
+                        [(ngModel)]="tipoAlojamiento"
+                        (ngModelChange)="aplicarFiltros()">
+                    <option value="Todos">Todos los tipos</option>
+                    <option value="Apartamento">Apartamento</option>
+                    <option value="Casa">Casa</option>
+                    <option value="Hotel">Hotel</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="precioMaximo">Precio máximo por noche</label>
+                <input
+                        id="precioMaximo"
+                        type="number"
+                        min="0"
+                        [(ngModel)]="precioMaximo"
+                        (ngModelChange)="aplicarFiltros()"
+                        placeholder="Sin límite">
+            </div>
+
+        </div>
+
+        <div class="seccion-servicios">
+            <h3>Servicios disponibles</h3>
+
+            <div class="lista-servicios">
+                <label>
+                    <input
+                            type="checkbox"
+                            [(ngModel)]="wifi"
+                            (ngModelChange)="aplicarFiltros()">
+                    Wi-Fi
+                </label>
+
+                <label>
+                    <input
+                            type="checkbox"
+                            [(ngModel)]="piscina"
+                            (ngModelChange)="aplicarFiltros()">
+                    Piscina
+                </label>
+
+                <label>
+                    <input
+                            type="checkbox"
+                            [(ngModel)]="parqueadero"
+                            (ngModelChange)="aplicarFiltros()">
+                    Parqueadero
+                </label>
+
+                <label>
+                    <input
+                            type="checkbox"
+                            [(ngModel)]="cocina"
+                            (ngModelChange)="aplicarFiltros()">
+                    Cocina
+                </label>
+
+                <label>
+                    <input
+                            type="checkbox"
+                            [(ngModel)]="television"
+                            (ngModelChange)="aplicarFiltros()">
+                    Televisión
+                </label>
+
+                <label>
+                    <input
+                            type="checkbox"
+                            [(ngModel)]="lavadora"
+                            (ngModelChange)="aplicarFiltros()">
+                    Lavadora
+                </label>
+
+                <label>
+                    <input
+                            type="checkbox"
+                            [(ngModel)]="desayuno"
+                            (ngModelChange)="aplicarFiltros()">
+                    Desayuno
+                </label>
+
+                <label>
+                    <input
+                            type="checkbox"
+                            [(ngModel)]="gimnasio"
+                            (ngModelChange)="aplicarFiltros()">
+                    Gimnasio
+                </label>
+            </div>
+        </div>
+    </section>
+
+    <section class="resultados">
+
+        <div class="encabezado-resultados">
+            <h2>Alojamientos disponibles</h2>
+
+            <span *ngIf="!cargando && !error">
+                {{ alojamientosFiltrados.length }}
+                {{ alojamientosFiltrados.length === 1 ? 'resultado' : 'resultados' }}
+            </span>
+        </div>
+
+        <p class="mensaje-estado" *ngIf="cargando">
+            Cargando alojamientos...
+        </p>
+
+        <div class="mensaje-error" *ngIf="error">
+            No fue posible cargar los alojamientos.
+            Verifica tu conexión e inténtalo de nuevo.
+        </div>
+
+        <div
+                class="rejilla-alojamientos"
+                *ngIf="!cargando && !error && alojamientosFiltrados.length > 0">
+
+            <article
+                    class="tarjeta-alojamiento"
+                    *ngFor="let alojamiento of alojamientosFiltrados">
+
+                <a
+                        class="enlace-imagen"
+                        [routerLink]="['/alojamiento', alojamiento.id]"
+                        [attr.aria-label]="'Ver detalles de ' + alojamiento.nombre">
+
+                    <img
+                            class="imagen-alojamiento"
+                            [src]="alojamiento.imagenPrincipal"
+                            [alt]="alojamiento.nombre"
+                            loading="lazy">
+
+                    <span class="etiqueta-tipo">
+                        {{ alojamiento.tipo }}
+                    </span>
+                </a>
+
+                <div class="contenido-tarjeta">
+
+                    <div class="titulo-tarjeta">
+                        <h3>{{ alojamiento.nombre }}</h3>
+
+                        <span class="calificacion">
+                            <span aria-hidden="true">★</span>
+                            {{ alojamiento.calificacion }}
+                        </span>
+                    </div>
+
+                    <p class="ubicacion">
+                        <span aria-hidden="true">⌖</span>
+                        {{ alojamiento.ciudad }}
+                    </p>
+
+                    <p class="capacidad">
+                        Hasta {{ alojamiento.capacidad }}
+                        {{ alojamiento.capacidad === 1 ? 'huésped' : 'huéspedes' }}
+                    </p>
+
+                    <div class="servicios-tarjeta">
+                        <span
+                                class="etiqueta-servicio"
+                                *ngFor="let servicio of alojamiento.servicios.slice(0, 4)">
+                            {{ servicio }}
+                        </span>
+
+                        <span
+                                class="mas-servicios"
+                                *ngIf="alojamiento.servicios.length > 4">
+                            +{{ alojamiento.servicios.length - 4 }}
+                        </span>
+                    </div>
+
+                    <div class="pie-tarjeta">
+                        <p class="precio">
+                            {{ formatearPrecio(alojamiento.precioNoche) }}
+                            <span>/ noche</span>
+                        </p>
+
+                            <a
+                                    class="btn-detalle"
+                                    [routerLink]="['/alojamiento', alojamiento.id]">
+                                Ver detalle
+                            </a>
+                    </div>
+
+                </div>
+            </article>
+        </div>
+
+        <div
+                class="sin-resultados"
+                *ngIf="!cargando && !error && alojamientosFiltrados.length === 0">
+
+            <h3>No encontramos alojamientos</h3>
+            <p>Prueba con otra ciudad o modifica los filtros de búsqueda.</p>
+
+            <button
+                    type="button"
+                    class="btn-principal"
+                    (click)="limpiarFiltros()">
+                Ver todos los alojamientos
+            </button>
+        </div>
+
+    </section>
+
+</div>
