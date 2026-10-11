@@ -1,26 +1,23 @@
+
 <nav class="navbar">
 
-    <a href="#" class="logo">
+    <a routerLink="/" class="logo">
         Colchon libre
-        <img class="imagotipo" src="/assets/imagotipo%20sin%20texto.png">
+        <img class="imagotipo" src="/assets/imagotipo%20sin%20texto.png" alt="Logo Colchón Libre">
     </a>
 
     <div class="nav-links">
 
-        <a href="#">
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
             Inicio
         </a>
 
-        <a href="#">
+        <a routerLink="/alojamientos" routerLinkActive="active">
             Alojamientos
         </a>
 
         <a href="#">
             Servicios
-        </a>
-
-        <a href="#">
-            Contacto
         </a>
 
     </div>
@@ -30,27 +27,28 @@
         <a href="#" class="login">
             Iniciar sesión
         </a>
-        <li><a class="btn-reserva" routerLink="/mis-reservas" routerLinkActive="active">
+
+        <a class="btn-reserva"
+           routerLink="/mis-reservas"
+           routerLinkActive="active">
             Mis reservas
-        </a></li>
+        </a>
 
         <button
                 type="button"
                 class="menu-btn"
-                (click)="toggleFiltros()"
-        >
+                routerLink="/alojamientos"
+                aria-label="Ver alojamientos y filtros">
             <i class="fa-solid fa-magnifying-glass" style="color: rgb(0 0 0);"></i>
         </button>
+
     </div>
-
-
 
 </nav>
 
 <div
         class="filtros"
-        [class.mostrar]="mostrarFiltros"
->
+        [class.mostrar]="mostrarFiltros">
 
     <h2>
         Filtrar alojamientos
@@ -58,14 +56,14 @@
 
     <div class="filtro">
 
-        <label>
+        <label for="imagen">
             Imagen
         </label>
 
         <input
                 type="file"
-                accept="image/*"
-        >
+                id="imagen"
+                accept="image/*">
 
     </div>
 
@@ -79,8 +77,7 @@
                 type="text"
                 id="nombre"
                 [(ngModel)]="nombre"
-                placeholder="Nombre del alojamiento"
-        >
+                placeholder="Nombre del alojamiento">
 
     </div>
 
@@ -94,8 +91,7 @@
                 type="text"
                 id="ciudad"
                 [(ngModel)]="ciudad"
-                placeholder="Ciudad"
-        >
+                placeholder="Ciudad">
 
     </div>
 
@@ -107,8 +103,7 @@
 
         <select
                 id="tipoAlojamiento"
-                [(ngModel)]="tipoAlojamiento"
-        >
+                [(ngModel)]="tipoAlojamiento">
 
             <option value="Todos">
                 Todos
@@ -141,14 +136,13 @@
                 id="capacidad"
                 [(ngModel)]="capacidad"
                 min="1"
-                placeholder="Número de personas"
-        >
+                placeholder="Número de personas">
 
     </div>
 
     <div class="filtro">
 
-        <label>
+        <label for="precioMinimo">
             Precio por noche
         </label>
 
@@ -156,17 +150,17 @@
 
             <input
                     type="number"
+                    id="precioMinimo"
                     [(ngModel)]="precioMinimo"
                     min="0"
-                    placeholder="Mínimo"
-            >
+                    placeholder="Mínimo">
 
             <input
                     type="number"
+                    id="precioMaximo"
                     [(ngModel)]="precioMaximo"
                     min="0"
-                    placeholder="Máximo"
-            >
+                    placeholder="Máximo">
 
         </div>
 
@@ -180,8 +174,7 @@
 
         <select
                 id="calificacion"
-                [(ngModel)]="calificacion"
-        >
+                [(ngModel)]="calificacion">
 
             <option value="Todas">
                 Todas
@@ -220,58 +213,28 @@
         <div class="servicios">
 
             <label>
-
-                <input
-                        type="checkbox"
-                        [(ngModel)]="wifi"
-                >
-
+                <input type="checkbox" [(ngModel)]="wifi">
                 WiFi
-
             </label>
 
             <label>
-
-                <input
-                        type="checkbox"
-                        [(ngModel)]="piscina"
-                >
-
+                <input type="checkbox" [(ngModel)]="piscina">
                 Piscina
-
             </label>
 
             <label>
-
-                <input
-                        type="checkbox"
-                        [(ngModel)]="parqueadero"
-                >
-
+                <input type="checkbox" [(ngModel)]="parqueadero">
                 Parqueadero
-
             </label>
 
             <label>
-
-                <input
-                        type="checkbox"
-                        [(ngModel)]="desayuno"
-                >
-
+                <input type="checkbox" [(ngModel)]="desayuno">
                 Desayuno
-
             </label>
 
             <label>
-
-                <input
-                        type="checkbox"
-                        [(ngModel)]="gimnasio"
-                >
-
+                <input type="checkbox" [(ngModel)]="gimnasio">
                 Gimnasio
-
             </label>
 
         </div>
@@ -283,16 +246,14 @@
         <button
                 type="button"
                 class="btn-aplicar"
-                (click)="aplicarFiltros()"
-        >
+                (click)="aplicarFiltros()">
             Aplicar filtros
         </button>
 
         <button
                 type="button"
                 class="btn-limpiar"
-                (click)="limpiarFiltros()"
-        >
+                (click)="limpiarFiltros()">
             Limpiar
         </button>
 
