@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -10,7 +11,7 @@ import { Servicioscomponent } from './component/servicioscomponent/servicioscomp
 const routes: Routes = [
   { path: '', component: Paginaprincipalcomponent },
   { path: 'alojamientos', component: Listadoalojamientoscomponent },
-  { path: 'alojamiento/:id', component: DetalleAlojamientoComponent },
+  { path: 'alojamientos/:id', component: DetalleAlojamientoComponent },
   { path: 'mis-reservas', component: MisReservasComponent },
   { path: 'servicios', component: Servicioscomponent },
   { path: '**', redirectTo: '' }
@@ -23,4 +24,4 @@ const routes: Routes = [
   })],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
