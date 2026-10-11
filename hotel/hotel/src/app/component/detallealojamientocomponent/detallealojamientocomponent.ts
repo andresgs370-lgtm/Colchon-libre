@@ -3,11 +3,12 @@ import { CurrencyPipe } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { map, switchMap, tap } from 'rxjs';
 import { Alojamiento, Cotizacion, Resena } from '../../models';
 import { AlojamientoService } from '../../services/alojamiento.service';
 import { CotizacionService } from '../../services/cotizacion.service';
 import { ReservaComponent } from '../reservacomponent/reservacomponent';
+import { map, of, switchMap, tap } from 'rxjs';
+
 
 @Component({
   selector: 'app-detalle-alojamiento',
@@ -35,25 +36,45 @@ export class DetalleAlojamientoComponent {
     huespedes: 1,
   });
 
-  private readonly id$ = this.route.paramMap.pipe(map((p) => Number(p.get('id'))));
+    private readonly id$ = this.route.paramMap.pipe(
+        map((p) => {
+            const valor = p.get('id');
+            const id = Number(valor);
 
-  readonly alojamiento = toSignal(
-      this.id$.pipe(
-          tap(() => {
-            this.cargando.set(true);
-            this.seleccion.set(null);
-            this.cotizacion.set(null);
-            this.erroresCotizacion.set([]);
-          }),
-          switchMap((id) => this.service.getAlojamientoPorId(id)),
-          tap(() => this.cargando.set(false))
-      )
-  );
+            return valor !== null && valor.trim() !== '' && Number.isInteger(id) && id > 0
+                ? id
+                : null;
+        })
+    );
 
-  readonly resenas = toSignal(
-      this.id$.pipe(switchMap((id) => this.service.getResenas(id))),
-      { initialValue: [] as Resena[] }
-  );
+    readonly alojamiento = toSignal(
+        this.id$.pipe(
+            tap(() => {
+                this.cargando.set(true);
+                this.seleccion.set(null);
+                this.cotizacion.set(null);
+                this.erroresCotizacion.set([]);
+            }),
+            switchMap((id) =>
+                id === null
+                    ? of(undefined)
+                    : this.service.getAlojamientoPorId(id)
+            ),
+            tap(() => this.cargando.set(false))
+        ),
+        { initialValue: undefined }
+    );
+
+    readonly resenas = toSignal(
+        this.id$.pipe(
+            switchMap((id) =>
+                id === null
+                    ? of([] as Resena[])
+                    : this.service.getResenas(id)
+            )
+        ),
+        { initialValue: [] as Resena[] }
+    );
 
   readonly imagenes = computed(() => {
     const a = this.alojamiento();

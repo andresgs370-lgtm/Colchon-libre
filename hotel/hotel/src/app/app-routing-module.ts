@@ -7,7 +7,7 @@ import { Paginaprincipalcomponent} from "./component/paginaprincipalcomponent/pa
 
 const routes: Routes = [
   { path: '', component: Paginaprincipalcomponent },
-  { path: 'alojamiento/:id', component: DetalleAlojamientoComponent },
+    { path: 'alojamientos/:id', component: DetalleAlojamientoComponent },
   { path: 'mis-reservas', component: MisReservasComponent },
   { path: '**', redirectTo: '' }
 ];

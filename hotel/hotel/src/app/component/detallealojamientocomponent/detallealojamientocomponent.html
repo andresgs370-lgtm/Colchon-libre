@@ -16,6 +16,11 @@
         </a>
     </div>
 
+    @if (cargando()) {
+        <div class="container py-5 text-center" role="status">
+            <p>Cargando alojamiento...</p>
+        </div>
+    }
     @if (alojamiento(); as a) {
         <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
             <h1 class="fw-bold mb-0">{{ a.nombre }}</h1>
