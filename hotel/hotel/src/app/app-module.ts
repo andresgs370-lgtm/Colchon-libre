@@ -1,4 +1,3 @@
-
 import { NgModule, provideBrowserGlobalErrorListeners } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { provideHttpClient } from "@angular/common/http";
@@ -14,6 +13,7 @@ import { ReservaComponent } from "./component/reservacomponent/reservacomponent"
 import { MisReservasComponent } from "./component/misreservascomponent/misreservascomponent";
 import { Listadoalojamientoscomponent } from "./component/listadoalojamientoscomponent/listadoalojamientoscomponent";
 import { Servicioscomponent } from "./component/servicioscomponent/servicioscomponent";
+import { Contactocomponent } from "./component/contactocomponent/contactocomponent";
 
 @NgModule({
   declarations: [
@@ -23,6 +23,7 @@ import { Servicioscomponent } from "./component/servicioscomponent/servicioscomp
     Footercomponents,
     Listadoalojamientoscomponent,
     Servicioscomponent,
+    Contactocomponent,
   ],
   imports: [
     BrowserModule,
@@ -36,4 +37,3 @@ import { Servicioscomponent } from "./component/servicioscomponent/servicioscomp
   bootstrap: [App],
 })
 export class AppModule {}
-
