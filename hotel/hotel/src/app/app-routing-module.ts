@@ -7,6 +7,7 @@ import { MisReservasComponent } from './component/misreservascomponent/misreserv
 import { Paginaprincipalcomponent } from './component/paginaprincipalcomponent/paginaprincipalcomponent';
 import { Listadoalojamientoscomponent } from './component/listadoalojamientoscomponent/listadoalojamientoscomponent';
 import { Servicioscomponent } from './component/servicioscomponent/servicioscomponent';
+import { Contactocomponent} from "./component/contactocomponent/contactocomponent";
 
 const routes: Routes = [
   { path: '', component: Paginaprincipalcomponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'alojamientos/:id', component: DetalleAlojamientoComponent },
   { path: 'mis-reservas', component: MisReservasComponent },
   { path: 'servicios', component: Servicioscomponent },
+  { path: 'contacto', component: Contactocomponent },
   { path: '**', redirectTo: '' }
 ];
 

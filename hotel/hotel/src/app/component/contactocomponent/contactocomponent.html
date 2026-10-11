@@ -1,0 +1,124 @@
+<section id="contacto" class="contacto">
+    <h1 class="animate__backInLeft titulos">Contacto</h1>
+    <p class="sub-titulo">¿Dudas sobre una reserva o un alojamiento? Escríbenos y te respondemos pronto.</p>
+
+    <div class="row g-4 align-items-stretch">
+
+        <div class="col-lg-5">
+            <div class="p-5 tarjeta-inf rounded-5 text-white shadow-lg h-100">
+                <h2 class="fw-bold mb-4">Hablemos</h2>
+
+                <ul class="contacto-lista list-unstyled m-0">
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <small class="opacity-75">Teléfono</small>
+                            <a href="tel:+573124128336">+57 312 412 8336</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <div>
+                            <small class="opacity-75">WhatsApp</small>
+                            <a href="https://wa.me/573124128336" target="_blank" rel="noopener">Escríbenos por
+                                WhatsApp</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <small class="opacity-75">Correo</small>
+                            <a href="mailto:hola@colchonlibre.co">hola@colchonlibre.co</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <small class="opacity-75">Dirección</small>
+                            <span>Bogotá, Colombia</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <small class="opacity-75">Horario</small>
+                            <span>Lunes a viernes, 8:00 a.m. - 6:00 p.m.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-lg-7">
+            <div class="card shadow-sm rounded-5 p-4 p-md-5 h-100">
+
+                @if (mensajeEnviado) {
+                    <div class="alert alert-success" role="status">
+                        Mensaje enviado. Te responderemos en menos de 24 horas hábiles.
+                    </div>
+                }
+
+                <h2 class="fw-bold mb-4">Envíanos un mensaje</h2>
+
+                <form #formContacto="ngForm" (ngSubmit)="enviarContacto(formContacto)" novalidate>
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+                            <label for="contactoNombre" class="form-label">Nombre</label>
+                            <input type="text" id="contactoNombre" name="nombre" class="form-control"
+                                   [(ngModel)]="contacto.nombre" required minlength="3" placeholder="Tu nombre">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="contactoCorreo" class="form-label">Correo</label>
+                            <input type="email" id="contactoCorreo" name="correo" class="form-control"
+                                   [(ngModel)]="contacto.correo" required email placeholder="tucorreo@ejemplo.com">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="contactoTelefono" class="form-label">Teléfono (opcional)</label>
+                            <input type="tel" id="contactoTelefono" name="telefono" class="form-control"
+                                   [(ngModel)]="contacto.telefono" placeholder="300 000 0000">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="contactoAsunto" class="form-label">Asunto</label>
+                            <select id="contactoAsunto" name="asunto" class="form-select"
+                                    [(ngModel)]="contacto.asunto" required>
+                                <option value="" disabled>Selecciona una opción</option>
+                                <option value="Reserva">Información sobre una reserva</option>
+                                <option value="Alojamiento">Consulta sobre un alojamiento</option>
+                                <option value="Publicar">Quiero publicar mi propiedad</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="contactoMensaje" class="form-label">Mensaje</label>
+                            <textarea id="contactoMensaje" name="mensaje" rows="5" class="form-control"
+                                      [(ngModel)]="contacto.mensaje" required minlength="10"
+                                      placeholder="Cuéntanos en qué podemos ayudarte"></textarea>
+                        </div>
+
+                        <div class="col-12 d-flex justify-content-end">
+                            <button type="submit" class="button-outline-glow" [disabled]="formContacto.invalid">
+                                <span class="button-glow"></span>
+                                <span class="button-content">
+                                    <span class="label">Enviar mensaje</span>
+                                    <span class="icon-box">
+                                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor"
+                                             stroke-width="2" fill="none">
+                                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                                        </svg>
+                                    </span>
+                                </span>
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
