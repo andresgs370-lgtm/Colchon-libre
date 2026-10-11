@@ -8,6 +8,7 @@ import { ReservaService } from '../../services/reserva.service';
   standalone: true,
   imports: [CurrencyPipe, DatePipe, RouterLink],
   templateUrl: './misreservascomponent.html',
+  styleUrl: './misreservascomponent.css'
 })
 export class MisReservasComponent {
   readonly reservas = inject(ReservaService).reservas;

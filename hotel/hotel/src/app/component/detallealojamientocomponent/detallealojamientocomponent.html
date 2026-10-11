@@ -28,7 +28,7 @@
         <div class="row g-4">
 
             <div class=" col-lg-7">
-                <img [src]="imagenActiva()" class="detalle-img rounded shadow-sm mb-2" [alt]="a.nombre">
+                <img [src]="imagenActiva()" class=" imagenes detalle-img rounded shadow-sm mb-2" [alt]="a.nombre">
                 @if (imagenes().length > 1) {
                     <div class="d-flex flex-wrap gap-2">
                         @for (img of imagenes(); track img) {
