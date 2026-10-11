@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { DetalleAlojamientoComponent} from "./component/detallealojamientocomponent/detallealojamientocomponent";
+import { DetalleAlojamientoComponent } from './component/detallealojamientocomponent/detallealojamientocomponent';
 import { MisReservasComponent } from './component/misreservascomponent/misreservascomponent';
-import { Paginaprincipalcomponent} from "./component/paginaprincipalcomponent/paginaprincipalcomponent";
+import { Paginaprincipalcomponent } from './component/paginaprincipalcomponent/paginaprincipalcomponent';
+import { Listadoalojamientoscomponent } from './component/listadoalojamientoscomponent/listadoalojamientoscomponent';
 import { Servicioscomponent } from './component/servicioscomponent/servicioscomponent';
-
 
 const routes: Routes = [
   { path: '', component: Paginaprincipalcomponent },
+  { path: 'alojamientos', component: Listadoalojamientoscomponent },
   { path: 'alojamiento/:id', component: DetalleAlojamientoComponent },
   { path: 'mis-reservas', component: MisReservasComponent },
   { path: 'servicios', component: Servicioscomponent },

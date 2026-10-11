@@ -10,6 +10,7 @@ import { Paginaprincipalcomponent } from "./component/paginaprincipalcomponent/p
 import { ReservaComponent } from "./component/reservacomponent/reservacomponent";
 import { MisReservasComponent } from "./component/misreservascomponent/misreservascomponent";
 import { Servicioscomponent } from "./component/servicioscomponent/servicioscomponent";
+import { Listadoalojamientoscomponent } from "./component/listadoalojamientoscomponent/listadoalojamientoscomponent";
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { Servicioscomponent } from "./component/servicioscomponent/servicioscomp
     Navbarcomponents,
     Footercomponents,
     Servicioscomponent,
+    Listadoalojamientoscomponent,
   ],
   imports: [
     BrowserModule,
