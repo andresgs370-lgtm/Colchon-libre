@@ -28,7 +28,7 @@ export class Paginaprincipalcomponent {
   private readonly cargado = signal(false);
   private readonly mostrarTodos = signal(false);
 
-  /** Única lectura del servicio. Si falla, lo deja escrito en la consola. */
+
   private readonly todos = toSignal(
       this.alojamientoService.getAlojamientos().pipe(
           tap(() => this.cargado.set(true)),
@@ -41,12 +41,12 @@ export class Paginaprincipalcomponent {
       { initialValue: [] as Alojamiento[] }
   );
 
-  /** Los 3 mejor calificados. */
+
   private readonly destacados = computed(() =>
       [...this.todos()].sort((a, b) => b.calificacion - a.calificacion).slice(0, 3)
   );
 
-  /** Sin filtros: destacados (o todos si se pulsó "Ver más"). Con filtros: los que coincidan. */
+
   private readonly tarjetas = computed(() => {
     const filtros = this.filtroService.filtros();
     const lista = this.filtroService.hayFiltros()
@@ -68,7 +68,7 @@ export class Paginaprincipalcomponent {
     }));
   });
 
-  /** El HTML sigue usando `casas` igual que antes. */
+
   get casas() {
     return this.tarjetas();
   }
@@ -77,7 +77,7 @@ export class Paginaprincipalcomponent {
     return this.filtroService.hayFiltros();
   }
 
-  /** Solo se avisa de "sin resultados" cuando ya terminó de cargar. */
+
   get sinResultados(): boolean {
     return this.cargado() && this.tarjetas().length === 0;
   }

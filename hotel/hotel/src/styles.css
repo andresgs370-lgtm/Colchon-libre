@@ -1,3 +1,17 @@
 .fondo{
     background: #efefef;
 }
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+app-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.contenido {
+    flex: 1;
+}

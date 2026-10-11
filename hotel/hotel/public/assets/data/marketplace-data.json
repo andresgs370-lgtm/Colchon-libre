@@ -112,9 +112,9 @@
       "tarifaLimpieza": 90000,
       "calificacion": 4.6,
       "activo": true,
-      "imagenPrincipal": "assets/4.avif",
+      "imagenPrincipal": "assets/4.png",
       "imagenes": [
-        "assets/4.avif"
+        "assets/4.png"
       ],
       "servicios": [
         "Wi-Fi",
@@ -142,9 +142,9 @@
       "tarifaLimpieza": 70000,
       "calificacion": 4.5,
       "activo": true,
-      "imagenPrincipal": "assets/5.avif",
+      "imagenPrincipal": "assets/5.png",
       "imagenes": [
-        "assets/5.avif"
+        "assets/5.png"
       ],
       "servicios": [
         "Wi-Fi",
@@ -201,9 +201,9 @@
       "tarifaLimpieza": 90000,
       "calificacion": 4.7,
       "activo": true,
-      "imagenPrincipal": "assets/7.avif",
+      "imagenPrincipal": "assets/7.webp",
       "imagenes": [
-        "assets/7.avif"
+        "assets/7.webp"
       ],
       "servicios": [
         "Wi-Fi",
@@ -231,9 +231,9 @@
       "tarifaLimpieza": 70000,
       "calificacion": 4.5,
       "activo": true,
-      "imagenPrincipal": "assets/8.avif",
+      "imagenPrincipal": "assets/8.jpg",
       "imagenes": [
-        "assets/8.avif"
+        "assets/8.jpg"
       ],
       "servicios": [
         "Wi-Fi",
@@ -261,9 +261,9 @@
       "tarifaLimpieza": 85000,
       "calificacion": 4.6,
       "activo": true,
-      "imagenPrincipal": "assets/9.avif",
+      "imagenPrincipal": "assets/9.jpg",
       "imagenes": [
-        "assets/9.avif"
+        "assets/9.jpg"
       ],
       "servicios": [
         "Wi-Fi",
@@ -292,9 +292,9 @@
       "tarifaLimpieza": 60000,
       "calificacion": 4.8,
       "activo": true,
-      "imagenPrincipal": "assets/10.avif",
+      "imagenPrincipal": "assets/10.jpg",
       "imagenes": [
-        "assets/10.avif"
+        "assets/10.jpg"
       ],
       "servicios": [
         "Wi-Fi",
@@ -687,9 +687,9 @@
       "tarifaLimpieza": 85000,
       "calificacion": 4.7,
       "activo": true,
-      "imagenPrincipal": "assets/23.avif",
+      "imagenPrincipal": "assets/23.webp",
       "imagenes": [
-        "assets/23.avif"
+        "assets/23.webp"
       ],
       "servicios": [
         "Wi-Fi",

@@ -90,10 +90,11 @@
 }
 
 .imagotipo {
-    height: 350px;
-    width: 350px;
-    object-fit: cover;
-    padding-block-end: 16px;
+    max-width: 100%;
+    width: auto;
+    max-height: 500px;
+    object-fit: contain;
+    padding-block-end: 16%;
 }
 
 
