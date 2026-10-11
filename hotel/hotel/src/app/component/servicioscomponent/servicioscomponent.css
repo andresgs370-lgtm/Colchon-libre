@@ -1,0 +1,248 @@
+.servicios {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+}
+
+.hero {
+    text-align: center;
+    padding: 40px 16px;
+    margin-bottom: 32px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #1f3a5f, #3b7dd8);
+    color: #fff;
+}
+
+.hero h1 {
+    margin: 0 0 8px;
+    font-size: 2.4rem;
+}
+
+.hero p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+.bloque {
+    margin-bottom: 40px;
+}
+
+.bloque h2 {
+    border-bottom: 3px solid #000000;
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+}
+
+.nombre-empresa {
+    margin: 0 0 8px;
+    color: #1f3a5f;
+}
+
+.mision-vision {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.tarjeta-info {
+    background: #f1f5fb;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.tarjeta-info h4 {
+    margin: 0 0 8px;
+}
+
+.contacto ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contacto li {
+    padding: 4px 0;
+}
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.tarjeta {
+    text-align: center;
+    color: white;
+    background: #000000;
+    border-radius: 14px;
+    padding: 24px 18px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    cursor: default;
+}
+.servicio-img {
+    display: block;
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin: 0 auto 1.5rem;
+}
+.sub-titulo {
+    color: #9c9c9c;
+    text-align: center;
+    font-family: "Berlin Sans FB";
+}
+.tarjeta .icono {
+    font-size: 2.8rem;
+    margin-bottom: 8px;
+}
+.titulos {
+    color: #000000;
+    text-align: center;
+    font-family: "Berlin Sans FB";
+}
+.tarjeta h3 {
+    font-size: calc(1.3rem + 1.2vw);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.tarjeta p {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    opacity: .9;
+    margin: 0;
+}
+.faq {
+    border: 1px solid #d9e1ee;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.faq-pregunta {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    background: #f1f5fb;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+}
+
+.faq-pregunta:hover {
+    background: #e3ecf9;
+}
+
+.flecha {
+    transition: transform 0.2s;
+}
+
+.flecha.abierta {
+    transform: rotate(180deg);
+}
+
+.faq-respuesta {
+    padding: 14px 16px;
+    background: #fff;
+    color: #444;
+}
+
+.imagen {
+    display: block;
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin: 0 auto 1.5rem;
+}
+/*
+https://ics.media/en/entry/230629/
+*/
+@property --angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.button-outline-glow {
+    --button-color: #fff;
+    --button-surface: #222;
+    --button-outline: #7a70dd;
+
+    position: relative;
+    display: inline-flex;
+    border-radius: 9999px;
+    text-decoration: none;
+    padding: 2px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+
+
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.button-outline-glow .button-glow {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: conic-gradient(
+            from var(--angle),
+            var(--button-surface),
+            var(--button-outline),
+            var(--button-surface),
+            var(--button-outline),
+            var(--button-surface)
+    );
+    animation: gradient-spin 3s linear infinite;
+}
+
+.button-outline-glow .button-content {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-direction: row-reverse;
+    padding: 8px 24px 8px 8px;
+    background-color: var(--button-surface);
+    color: var(--button-color);
+    border-radius: inherit;
+    font-family: inherit;
+    font-weight: 500;
+    z-index: 4;
+    width: 100%;
+}
+
+.button-outline-glow .icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 100%;
+    margin-right: 12px;
+    margin-left: 0;
+
+
+    transform: rotate(180deg);
+}
+
+@keyframes gradient-spin {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
+}

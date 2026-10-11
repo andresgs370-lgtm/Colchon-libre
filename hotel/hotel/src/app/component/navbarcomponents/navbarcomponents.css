@@ -380,4 +380,10 @@
 }
 
 
+html {
+  scroll-behavior: smooth;
+}
 
+#destacados {
+  scroll-margin-top: 1000px;
+}

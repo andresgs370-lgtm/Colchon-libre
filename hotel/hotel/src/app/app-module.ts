@@ -9,6 +9,7 @@ import { Footercomponents } from "./component/footercomponents/footercomponents"
 import { Paginaprincipalcomponent } from "./component/paginaprincipalcomponent/paginaprincipalcomponent";
 import { ReservaComponent } from "./component/reservacomponent/reservacomponent";
 import { MisReservasComponent } from "./component/misreservascomponent/misreservascomponent";
+import { Servicioscomponent } from "./component/servicioscomponent/servicioscomponent";
 import { Listadoalojamientoscomponent } from "./component/listadoalojamientoscomponent/listadoalojamientoscomponent";
 
 @NgModule({
@@ -17,6 +18,7 @@ import { Listadoalojamientoscomponent } from "./component/listadoalojamientoscom
     Paginaprincipalcomponent,
     Navbarcomponents,
     Footercomponents,
+    Servicioscomponent,
     Listadoalojamientoscomponent,
   ],
   imports: [

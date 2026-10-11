@@ -5,16 +5,22 @@ import { DetalleAlojamientoComponent } from './component/detallealojamientocompo
 import { MisReservasComponent } from './component/misreservascomponent/misreservascomponent';
 import { Paginaprincipalcomponent } from './component/paginaprincipalcomponent/paginaprincipalcomponent';
 import { Listadoalojamientoscomponent } from './component/listadoalojamientoscomponent/listadoalojamientoscomponent';
+import { Servicioscomponent } from './component/servicioscomponent/servicioscomponent';
+
 const routes: Routes = [
-    { path: '', component: Paginaprincipalcomponent },
-    { path: 'alojamientos', component: Listadoalojamientoscomponent },
-    { path: 'alojamiento/:id', component: DetalleAlojamientoComponent },
-    { path: 'mis-reservas', component: MisReservasComponent },
-    { path: '**', redirectTo: '' }
+  { path: '', component: Paginaprincipalcomponent },
+  { path: 'alojamientos', component: Listadoalojamientoscomponent },
+  { path: 'alojamiento/:id', component: DetalleAlojamientoComponent },
+  { path: 'mis-reservas', component: MisReservasComponent },
+  { path: 'servicios', component: Servicioscomponent },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, {
+    anchorScrolling: 'enabled',
+    scrollPositionRestoration: 'enabled'
+  })],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
