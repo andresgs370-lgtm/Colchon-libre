@@ -370,3 +370,20 @@
 .btn-limpiar:hover {
   background-color: #f2f2f2;
 }
+.imagotipo{
+  height: 70px;
+  width: 70px ;
+  object-fit: cover;
+  padding-block-end: 16px;
+
+
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+#destacados {
+  scroll-margin-top: 1000px;
+}

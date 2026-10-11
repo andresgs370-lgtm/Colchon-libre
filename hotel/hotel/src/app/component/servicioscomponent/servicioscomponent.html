@@ -1,0 +1,75 @@
+<main class="servicios">
+
+
+
+    <section class="bloque sobre-nosotros">
+        <div class="texto">
+            <h2 class="animate__backInLeft titulos">Servicios</h2>
+            <h3 class="sub-titulo">{{ empresa.nombre }}</h3>
+            <p>{{ empresa.descripcion }}</p>
+        </div>
+
+        <img class="imagen" src="/assets/imagotipo%20sin%20texto.png" alt="Sobre nosotros">
+    </section>
+
+    <section class="bloque mision-vision">
+        <div class="tarjeta invertida">
+            <h3 class="sub-titulo">Misión</h3>
+            <p>{{ empresa.mision }}</p>
+        </div>
+        <div class="tarjeta invertida">
+            <h3 class="sub-titulo">Visión</h3>
+            <p>{{ empresa.vision }}</p>
+        </div>
+    </section>
+
+    <section class="bloque contacto">
+        <h2 class="titulos">Contacto</h2>
+        <ul>
+            <li><strong>Dirección:</strong> {{ empresa.contacto.direccion }}</li>
+            <li><strong>Teléfono:</strong> {{ empresa.contacto.telefono }}</li>
+            <li><strong>Correo:</strong> {{ empresa.contacto.correo }}</li>
+            <li><strong>Horario:</strong> {{ empresa.contacto.horario }}</li>
+        </ul>
+    </section>
+
+    <section class="bloque">
+        <h2 class="titulos">Nuestras empresas aliadas</h2>
+        <div class="tarjetas">
+            <article class="tarjeta" *ngFor="let servicio of otrosServicios">
+                <img class="imagen" [src]="servicio.imagen" [alt]="servicio.nombre">
+                <h3 class="sub-titulo">{{ servicio.nombre }}</h3>
+                <p>{{ servicio.descripcion }}</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="bloque bg-black text-white p-5 rounded-5 shadow-lg">
+        <h2 class="titulos text-white">Preguntas frecuentes</h2>
+        <div class="faq border-bottom border-secondary" *ngFor="let item of preguntas; let i = index">
+            <button class="faq-pregunta bg-black text-white border-0 w-100 d-flex justify-content-between align-items-center py-3"
+                    type="button" (click)="alternarPregunta(i)">
+                <span>{{ item.pregunta }}</span>
+                <span class="faq-signo">{{ item.abierta ? '−' : '+' }}</span>
+            </button>
+            <div class="faq-respuesta bg-black text-white opacity-75 pb-3" *ngIf="item.abierta">
+                {{ item.respuesta }}
+            </div>
+        </div>
+    </section>
+    <!--     https://ics.media/en/entry/230629/ -->
+    <div style="display: flex; justify-content: flex-end;">
+
+        <a routerLink="/" class="button-outline-glow">
+            <span class="button-glow"></span>
+            <span class="button-content">
+      <span class="label">Volver al inicio</span>
+      <span class="icon-box">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </span>
+    </span>
+        </a>
+    </div>
+</main>

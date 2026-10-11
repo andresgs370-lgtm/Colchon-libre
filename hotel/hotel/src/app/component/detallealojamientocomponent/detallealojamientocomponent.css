@@ -1,0 +1,93 @@
+.imagenes {
+    display: block;
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+
+/*
+https://ics.media/en/entry/230629/
+*/
+@property --angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.button-outline-glow {
+    --button-color: #fff;
+    --button-surface: #222;
+    --button-outline: #7a70dd;
+
+    position: relative;
+    display: inline-flex;
+    border-radius: 9999px;
+    text-decoration: none;
+    padding: 2px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+
+
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.button-outline-glow .button-glow {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: conic-gradient(
+            from var(--angle),
+            var(--button-surface),
+            var(--button-outline),
+            var(--button-surface),
+            var(--button-outline),
+            var(--button-surface)
+    );
+    animation: gradient-spin 3s linear infinite;
+}
+
+.button-outline-glow .button-content {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-direction: row-reverse;
+    padding: 8px 24px 8px 8px;
+    background-color: var(--button-surface);
+    color: var(--button-color);
+    border-radius: inherit;
+    font-family: inherit;
+    font-weight: 500;
+    z-index: 4;
+    width: 100%;
+}
+
+.button-outline-glow .icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 100%;
+    margin-right: 12px;
+    margin-left: 0;
+
+
+    transform: rotate(180deg);
+}
+
+@keyframes gradient-spin {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
+}

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { FiltroService } from '../../services/filtro.service';
 
 @Component({
   selector: 'app-navbarcomponents',
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
   templateUrl: './navbarcomponents.html',
 })
 export class Navbarcomponents {
+
+  private readonly filtroService = inject(FiltroService);
 
   mostrarFiltros: boolean = false;
 
@@ -40,7 +43,7 @@ export class Navbarcomponents {
   toggleFiltros(): void {
 
     this.mostrarFiltros =
-      !this.mostrarFiltros;
+        !this.mostrarFiltros;
 
   }
 
@@ -54,51 +57,68 @@ export class Navbarcomponents {
     console.log('Ciudad:', this.ciudad);
 
     console.log(
-      'Tipo:',
-      this.tipoAlojamiento
+        'Tipo:',
+        this.tipoAlojamiento
     );
 
     console.log(
-      'Capacidad:',
-      this.capacidad
+        'Capacidad:',
+        this.capacidad
     );
 
     console.log(
-      'Precio mínimo:',
-      this.precioMinimo
+        'Precio mínimo:',
+        this.precioMinimo
     );
 
     console.log(
-      'Precio máximo:',
-      this.precioMaximo
+        'Precio máximo:',
+        this.precioMaximo
     );
 
     console.log(
-      'Calificación:',
-      this.calificacion
+        'Calificación:',
+        this.calificacion
     );
 
     console.log('WiFi:', this.wifi);
 
     console.log(
-      'Piscina:',
-      this.piscina
+        'Piscina:',
+        this.piscina
     );
 
     console.log(
-      'Parqueadero:',
-      this.parqueadero
+        'Parqueadero:',
+        this.parqueadero
     );
 
     console.log(
-      'Desayuno:',
-      this.desayuno
+        'Desayuno:',
+        this.desayuno
     );
 
     console.log(
-      'Gimnasio:',
-      this.gimnasio
+        'Gimnasio:',
+        this.gimnasio
     );
+
+    this.filtroService.aplicar({
+      nombre: this.nombre,
+      ciudad: this.ciudad,
+      tipo: this.tipoAlojamiento,
+      capacidad: Number(this.capacidad) || 1,
+      precioMinimo: Number(this.precioMinimo) || 0,
+      precioMaximo: Number(this.precioMaximo) || 0,
+      calificacion: this.calificacion,
+      servicios: [
+        this.wifi ? 'WiFi' : '',
+        this.piscina ? 'Piscina' : '',
+        this.parqueadero ? 'Parqueadero' : '',
+        this.desayuno ? 'Desayuno' : '',
+        this.gimnasio ? 'Gimnasio' : '',
+      ].filter(Boolean),
+    });
 
     this.mostrarFiltros = false;
 
@@ -130,6 +150,8 @@ export class Navbarcomponents {
     this.desayuno = false;
 
     this.gimnasio = false;
+
+    this.filtroService.limpiar();
 
   }
 

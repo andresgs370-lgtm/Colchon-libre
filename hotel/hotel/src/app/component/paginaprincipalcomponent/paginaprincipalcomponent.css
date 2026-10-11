@@ -1,80 +1,175 @@
 
-
 .flip-card {
-  background-color: transparent;
-  height: 420px;
-  perspective: 1000px;
+    background-color: transparent;
+    height: 420px;
+    perspective: 1000px;
 }
 
 
 .flip-card__inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 1.5s;
-  transform-style: preserve-3d;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 1.5s;
+    transform-style: preserve-3d;
 }
 
 
 .flip-card:hover .flip-card__inner {
-  transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
 .flip-card__face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border-radius: 0.5rem;
-  overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 0.5rem;
+    overflow: hidden;
 }
 
 
 .flip-card__face--front {
-  background-color: #ffffff;
+    background-color: #ffffff;
 }
 
 .flip-card__img {
-  height: 250px;
-  object-fit: cover;
-  width: 100%;
+    height: 250px;
+    object-fit: cover;
+    width: 100%;
 }
+
 .img {
-  height: 500px;
-  object-fit: cover;
-  width: 100%;
-  filter: blur(4px)
+    height: 500px;
+    object-fit: cover;
+    width: 100%;
+    filter: blur(4px)
 }
 
 
 .flip-card__face--back {
-  color: #000000;
-  background-color: #ffffff;
-  transform: rotateY(180deg);
-  border: 1px solid rgba(0, 0, 0, 0.125);
+    color: #000000;
+    background-color: #ffffff;
+    transform: rotateY(180deg);
+    border: 1px solid rgba(0, 0, 0, 0.125);
 }
-.text{
-  text-align: center;
-font-size:max(100px, 10px);
-  font-width: 10%;
-padding-block: 200px;
-  color: #fdfdfd;
-  -webkit-text-stroke: 0.5px #000000;
-  font-family: "Berlin Sans FB";
+
+.text {
+    text-align: center;
+    font-size: max(100px, 10px);
+    font-width: 10%;
+    padding-block: 200px;
+    color: #fdfdfd;
+    -webkit-text-stroke: 0.5px #000000;
+    font-family: "Berlin Sans FB";
 
 }
-.titulos{
-  color: #000000;
-  text-align: left;
-  font-family: "Berlin Sans FB";
+
+.titulos {
+    color: #000000;
+    text-align: left;
+    font-family: "Berlin Sans FB";
 }
-.sub-titulo{
-  color: #9c9c9c;
-  text-align: left;
-  font-family: "Berlin Sans FB";
+
+.sub-titulo {
+    color: #9c9c9c;
+    text-align: left;
+    font-family: "Berlin Sans FB";
 }
-.padding{
-  padding-right:5% ;
-  padding-left:5% ;
+
+.padding {
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+.tarjeta-inf {
+    background: black;
+    color: white;
+    text-align: justify-all;
+}
+
+.imagotipo {
+    max-width: 100%;
+    width: auto;
+    max-height: 500px;
+    object-fit: contain;
+    padding-block-end: 16%;
+}
+
+
+/*
+https://ics.media/en/entry/230629/
+*/
+@property --angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.button-outline-glow {
+    --button-color: #fff;
+    --button-surface: #222;
+    --button-outline: #7a70dd;
+
+    position: relative;
+    display: inline-flex;
+    border-radius: 9999px;
+    text-decoration: none;
+    padding: 2px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.button-outline-glow .button-glow {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: conic-gradient(
+            from var(--angle),
+            var(--button-surface),
+            var(--button-outline),
+            var(--button-surface),
+            var(--button-outline),
+            var(--button-surface)
+    );
+    animation: gradient-spin 3s linear infinite;
+}
+
+
+.button-outline-glow .button-content {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 8px 8px 24px;
+    background-color: var(--button-surface);
+    color: var(--button-color);
+    border-radius: inherit;
+    font-family: inherit;
+    font-weight: 500;
+    z-index: 4;
+    width: 100%;
+}
+
+.button-outline-glow .icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 100%;
+    margin-left: 12px;
+}
+
+
+@keyframes gradient-spin {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
 }

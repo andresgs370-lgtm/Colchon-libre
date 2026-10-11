@@ -1,0 +1,791 @@
+{
+  "alojamientos": [
+    {
+      "id": 1,
+      "nombre": "Casa moderna en Chapinero",
+      "descripcion": "Casa moderna de dos niveles ubicada cerca de restaurantes, cafés y zonas comerciales de Bogotá.",
+      "ciudad": "Bogotá",
+      "ubicacion": "Chapinero, Bogotá",
+      "tipo": "Casa",
+      "capacidad": 6,
+      "habitaciones": 3,
+      "camas": 4,
+      "banos": 2,
+      "precioNoche": 320000,
+      "tarifaLimpieza": 60000,
+      "calificacion": 4.8,
+      "activo": true,
+      "imagenPrincipal": "assets/1.png",
+      "imagenes": [
+        "assets/1.png"
+      ],
+      "servicios": [
+        "Wi-Fi",
+        "Cocina",
+        "Televisión",
+        "Lavadora",
+        "Parqueadero"
+      ],
+      "reglas": [
+        "No fumar",
+        "No se permiten fiestas",
+        "Máximo 6 huéspedes"
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "Casa frente al mar",
+      "descripcion": "Casa amplia con vista directa al mar ubicada en una zona exclusiva de Cartagena.",
+      "ciudad": "Cartagena",
+      "ubicacion": "Bocagrande, Cartagena",
+      "tipo": "Casa",
+      "capacidad": 8,
+      "habitaciones": 4,
+      "camas": 6,
+      "banos": 3,
+      "precioNoche": 650000,
+      "tarifaLimpieza": 90000,
+      "calificacion": 4.9,
+      "activo": true,
+      "imagenPrincipal": "assets/2.jpg",
+      "imagenes": [
+        "assets/2.jpg"
+      ],
+      "servicios": [
+        "Wi-Fi",
+        "Piscina",
+        "Aire acondicionado",
+        "Cocina",
+        "Parqueadero"
+      ],
+      "reglas": [
+        "No fumar",
+        "No mascotas",
+        "Máximo 8 huéspedes"
+      ]
+    },
+    {
+      "id": 3,
+      "nombre": "Casa campestre en Guatapé",
+      "descripcion": "Casa rodeada de naturaleza con amplio jardín y vista panorámica al embalse de Guatapé.",
+      "ciudad": "Guatapé",
+      "ubicacion": "Guatapé, Antioquia",
+      "tipo": "Casa",
+      "capacidad": 8,
+      "habitaciones": 4,
+      "camas": 5,
+      "banos": 3,
+      "precioNoche": 500000,
+      "tarifaLimpieza": 80000,
+      "calificacion": 4.7,
+      "activo": true,
+      "imagenPrincipal": "assets/3.jpg",
+      "imagenes": [
+        "assets/3.jpg"
+      ],
+      "servicios": [
+        "Wi-Fi",
+        "Cocina",
+        "Parqueadero",
+        "BBQ"
+      ],
+      "reglas": [
+        "No fumar",
+        "Silencio después de las 10 PM",
+        "Máximo 8 huéspedes"
+      ]
+    },
+    {
+      "id": 4,
+      "nombre": "Casa colonial en Villa de Leyva",
+      "descripcion": "Casa tradicional de estilo colonial con patio central, localizada cerca de la plaza principal.",
+      "ciudad": "Villa de Leyva",
+      "ubicacion": "Centro histórico",
+      "tipo": "Casa",
+      "capacidad": 8,
+      "habitaciones": 4,
+      "camas": 5,
+      "banos": 3,
+      "precioNoche": 520000,
+      "tarifaLimpieza": 90000,
+      "calificacion": 4.6,
+      "activo": true,
+      "imagenPrincipal": "assets/4.avif",
+      "imagenes": [
+        "assets/4.avif"
+      ],
+      "servicios": [
+        "Wi-Fi",
+        "Cocina",
+        "Chimenea",
+        "Parqueadero"
+      ],
+      "reglas": [
+        "No fiestas",
+        "Máximo 8 huéspedes"
+      ]
+    },
+    {
+      "id": 5,
+      "nombre": "Casa ejecutiva en Medellín",
+      "descripcion": "Casa moderna y elegante cercana a zonas comerciales y empresariales de El Poblado.",
+      "ciudad": "Medellín",
+      "ubicacion": "El Poblado, Medellín",
+      "tipo": "Casa",
+      "capacidad": 6,
+      "habitaciones": 3,
+      "camas": 4,
+      "banos": 2,
+      "precioNoche": 420000,
+      "tarifaLimpieza": 70000,
+      "calificacion": 4.5,
+      "activo": true,
+      "imagenPrincipal": "assets/5.avif",
+      "imagenes": [
+        "assets/5.avif"
+      ],
+      "servicios": [
+        "Wi-Fi",
+        "Cocina",
+        "Gimnasio",
+        "Parqueadero"
+      ],
+      "reglas": [
+        "No fumar",
+        "Máximo 6 huéspedes"
+      ]
+    },
+    {
+      "id": 6,
+      "nombre": "Casa campestre tradicional",
+      "descripcion": "Casa campestre tradicional rodeada de árboles frutales, actualmente fuera de servicio.",
+      "ciudad": "Armenia",
+      "ubicacion": "Zona rural",
+      "tipo": "Casa",
+      "capacidad": 8,
+      "habitaciones": 4,
+      "camas": 6,
+      "banos": 3,
+      "precioNoche": 480000,
+      "tarifaLimpieza": 100000,
+      "calificacion": 4.4,
+      "activo": false,
+      "imagenPrincipal": "assets/6.jpg",
+      "imagenes": [
+        "assets/6.jpg"
+      ],
+      "servicios": [
+        "Piscina",
+        "Parqueadero",
+        "BBQ"
+      ],
+      "reglas": [
+        "No fiestas",
+        "Máximo 8 huéspedes"
+      ]
+    },
+    {
+      "id": 7,
+      "nombre": "Casa boutique en el Centro Histórico",
+      "descripcion": "Casa patrimonial convertida en un alojamiento exclusivo con patio interior y piscina.",
+      "ciudad": "Cartagena",
+      "ubicacion": "Centro Histórico, Cartagena",
+      "tipo": "Casa",
+      "capacidad": 6,
+      "habitaciones": 3,
+      "camas": 4,
+      "banos": 3,
+      "precioNoche": 600000,
+      "tarifaLimpieza": 90000,
+      "calificacion": 4.7,
+      "activo": true,
+      "imagenPrincipal": "assets/7.avif",
+      "imagenes": [
+        "assets/7.avif"
+      ],
+      "servicios": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado",
+        "Piscina"
+      ],
+      "reglas": [
+        "No fumar",
+        "Silencio después de las 10 PM"
+      ]
+    },
+    {
+      "id": 8,
+      "nombre": "Casa con vista a la montaña",
+      "descripcion": "Casa amplia y luminosa con jardín privado y vista privilegiada a los cerros orientales.",
+      "ciudad": "Bogotá",
+      "ubicacion": "Usaquén, Bogotá",
+      "tipo": "Casa",
+      "capacidad": 6,
+      "habitaciones": 3,
+      "camas": 4,
+      "banos": 2,
+      "precioNoche": 380000,
+      "tarifaLimpieza": 70000,
+      "calificacion": 4.5,
+      "activo": true,
+      "imagenPrincipal": "assets/8.avif",
+      "imagenes": [
+        "assets/8.avif"
+      ],
+      "servicios": [
+        "Wi-Fi",
+        "Cocina",
+        "Parqueadero",
+        "Gimnasio"
+      ],
+      "reglas": [
+        "No fumar",
+        "No fiestas"
+      ]
+    },
+    {
+      "id": 9,
+      "nombre": "Casa de playa en Santa Marta",
+      "descripcion": "Casa vacacional a pocos metros del mar, con jardín amplio y zona de hamacas.",
+      "ciudad": "Santa Marta",
+      "ubicacion": "Rodadero, Santa Marta",
+      "tipo": "Casa",
+      "capacidad": 8,
+      "habitaciones": 4,
+      "camas": 5,
+      "banos": 3,
+      "precioNoche": 480000,
+      "tarifaLimpieza": 85000,
+      "calificacion": 4.6,
+      "activo": true,
+      "imagenPrincipal": "assets/9.avif",
+      "imagenes": [
+        "assets/9.avif"
+      ],
+      "servicios": [
+        "Wi-Fi",
+        "Piscina",
+        "Aire acondicionado",
+        "Parqueadero",
+        "BBQ"
+      ],
+      "reglas": [
+        "No fumar",
+        "Máximo 8 huéspedes"
+      ]
+    },
+    {
+      "id": 10,
+      "nombre": "Casa campestre entre cafetales",
+      "descripcion": "Casa de madera y mampostería rodeada de cultivos de café, ideal para desconectarse en familia.",
+      "ciudad": "Salento",
+      "ubicacion": "Vereda Boquía, Salento",
+      "tipo": "Casa",
+      "capacidad": 6,
+      "habitaciones": 3,
+      "camas": 4,
+      "banos": 2,
+      "precioNoche": 350000,
+      "tarifaLimpieza": 60000,
+      "calificacion": 4.8,
+      "activo": true,
+      "imagenPrincipal": "assets/10.avif",
+      "imagenes": [
+        "assets/10.avif"
+      ],
+      "servicios": [
+        "Wi-Fi",
+        "Cocina",
+        "Chimenea",
+        "Desayuno",
+        "Parqueadero"
+      ],
+      "reglas": [
+        "No fumar",
+        "No mascotas"
+      ]
+    },
+    {
+      "id": 11,
+      "nombre": "Casa ejecutiva en El Poblado",
+      "descripcion": "Casa moderna de diseño abierto pensada para estancias largas y grupos de trabajo.",
+      "ciudad": "Medellín",
+      "ubicacion": "El Poblado, Medellín",
+      "tipo": "Casa",
+      "capacidad": 6,
+      "habitaciones": 3,
+      "camas": 4,
+      "banos": 2,
+      "precioNoche": 450000,
+      "tarifaLimpieza": 75000,
+      "calificacion": 4.4,
+      "activo": true,
+      "imagenPrincipal": "assets/11.jpg",
+      "imagenes": [
+        "assets/11.jpg"
+      ],
+      "servicios": [
+        "Wi-Fi",
+        "Desayuno",
+        "Gimnasio",
+        "Parqueadero"
+      ],
+      "reglas": [
+        "No fumar",
+        "Check-in después de las 3 PM"
+      ]
+    },
+    {
+      "id": 12,
+      "nombre": "Casa campestre en Anapoima",
+      "descripcion": "Casa de clima cálido con piscina privada, kiosco y amplia zona verde para niños.",
+      "ciudad": "Anapoima",
+      "ubicacion": "Vía Anapoima, Cundinamarca",
+      "tipo": "Casa",
+      "capacidad": 8,
+      "habitaciones": 4,
+      "camas": 5,
+      "banos": 3,
+      "precioNoche": 520000,
+      "tarifaLimpieza": 90000,
+      "calificacion": 4.2,
+      "activo": true,
+      "imagenPrincipal": "assets/12.webp",
+      "imagenes": [
+        "assets/12.webp"
+      ],
+      "servicios": [
+        "Wi-Fi",
+        "Piscina",
+        "Parqueadero",
+        "BBQ",
+        "Cocina"
+      ],
+      "reglas": [
+        "Silencio después de las 11 PM",
+        "Máximo 8 huéspedes"
+      ]
+    },
+    {
+      "id": 13,
+      "nombre": "Casa familiar en Barranquilla",
+      "descripcion": "Casa amplia y ventilada, ubicada a pocos minutos de zonas residenciales y comerciales.",
+      "ciudad": "Barranquilla",
+      "ubicacion": "Alto Prado, Barranquilla",
+      "tipo": "Casa",
+      "capacidad": 6,
+      "habitaciones": 3,
+      "camas": 4,
+      "banos": 2,
+      "precioNoche": 310000,
+      "tarifaLimpieza": 55000,
+      "calificacion": 4.2,
+      "activo": true,
+      "imagenPrincipal": "assets/13.png",
+      "imagenes": [
+        "assets/13.png"
+      ],
+      "servicios": [
+        "Wi-Fi",
+        "Aire acondicionado",
+        "Cocina",
+        "Parqueadero"
+      ],
+      "reglas": [
+        "No fumar",
+        "No fiestas"
+      ]
+    },
+    {
+      "id": 14,
+      "nombre": "Casa campestre con jacuzzi en Guasca",
+      "descripcion": "Casa de montaña con jacuzzi al aire libre y chimenea interior, a una hora de Bogotá.",
+      "ciudad": "Guasca",
+      "ubicacion": "Vereda La Concepción, Guasca",
+      "tipo": "Casa",
+      "capacidad": 4,
+      "habitaciones": 2,
+      "camas": 3,
+      "banos": 2,
+      "precioNoche": 390000,
+      "tarifaLimpieza": 60000,
+      "calificacion": 4.8,
+      "activo": true,
+      "imagenPrincipal": "assets/15.jpg",
+      "imagenes": [
+        "assets/15.jpg"
+      ],
+      "servicios": [
+        "Wi-Fi",
+        "Chimenea",
+        "Desayuno",
+        "Parqueadero"
+      ],
+      "reglas": [
+        "No fumar",
+        "Ambiente familiar"
+      ]
+    },
+    {
+      "id": 15,
+      "nombre": "Casa en remodelación en Cali",
+      "descripcion": "Casa amplia tradicional cerrada temporalmente por mejoras en sus instalaciones.",
+      "ciudad": "Cali",
+      "ubicacion": "San Antonio, Cali",
+      "tipo": "Casa",
+      "capacidad": 6,
+      "habitaciones": 3,
+      "camas": 4,
+      "banos": 2,
+      "precioNoche": 350000,
+      "tarifaLimpieza": 70000,
+      "calificacion": 4.1,
+      "activo": false,
+      "imagenPrincipal": "assets/15.jpg",
+      "imagenes": [
+        "assets/15.jpg"
+      ],
+      "servicios": [
+        "Wi-Fi",
+        "Piscina",
+        "Desayuno"
+      ],
+      "reglas": [
+        "No fumar"
+      ]
+    },
+    {
+      "id": 16,
+      "nombre": "Casa colonial en Barichara",
+      "descripcion": "Casa de piedra tallada y patio interior en uno de los pueblos más hermosos de Colombia.",
+      "ciudad": "Barichara",
+      "ubicacion": "Centro, Barichara",
+      "tipo": "Casa",
+      "capacidad": 6,
+      "habitaciones": 3,
+      "camas": 4,
+      "banos": 2,
+      "precioNoche": 400000,
+      "tarifaLimpieza": 70000,
+      "calificacion": 4.6,
+      "activo": true,
+      "imagenPrincipal": "assets/16.jpeg",
+      "imagenes": [
+        "assets/16.jpeg"
+      ],
+      "servicios": [
+        "Wi-Fi",
+        "Cocina",
+        "Parqueadero",
+        "Desayuno"
+      ],
+      "reglas": [
+        "No fiestas",
+        "Silencio después de las 10 PM"
+      ]
+    },
+    {
+      "id": 17,
+      "nombre": "Casa urbana frente al parque en Cali",
+      "descripcion": "Casa cómoda frente a un parque arbolado, cerca de la zona gastronómica y cultural.",
+      "ciudad": "Cali",
+      "ubicacion": "Granada, Cali",
+      "tipo": "Casa",
+      "capacidad": 6,
+      "habitaciones": 3,
+      "camas": 4,
+      "banos": 2,
+      "precioNoche": 300000,
+      "tarifaLimpieza": 60000,
+      "calificacion": 3.0,
+      "activo": true,
+      "imagenPrincipal": "assets/17.webp",
+      "imagenes": [
+        "assets/17.webp"
+      ],
+      "servicios": [
+        "Wi-Fi",
+        "Aire acondicionado",
+        "Cocina",
+        "Gimnasio",
+        "Parqueadero"
+      ],
+      "reglas": [
+        "No fumar",
+        "No fiestas"
+      ]
+    },
+    {
+      "id": 18,
+      "nombre": "Casa de playa en San Andrés",
+      "descripcion": "Casa amplia con acceso directo a la playa, desayuno incluido y ambiente caribeño.",
+      "ciudad": "San Andrés",
+      "ubicacion": "Sound Bay, San Andrés",
+      "tipo": "Casa",
+      "capacidad": 8,
+      "habitaciones": 4,
+      "camas": 6,
+      "banos": 3,
+      "precioNoche": 580000,
+      "tarifaLimpieza": 95000,
+      "calificacion": 4.7,
+      "activo": true,
+      "imagenPrincipal": "assets/18.jpg",
+      "imagenes": [
+        "assets/18.jpg"
+      ],
+      "servicios": [
+        "Wi-Fi",
+        "Piscina",
+        "Desayuno",
+        "Aire acondicionado"
+      ],
+      "reglas": [
+        "No fumar",
+        "Check-out antes de las 12 PM"
+      ]
+    },
+    {
+      "id": 19,
+      "nombre": "Casa campestre en el Eje Cafetero",
+      "descripcion": "Casa familiar rodeada de naturaleza, cerca de rutas de senderismo y parques temáticos.",
+      "ciudad": "Armenia",
+      "ubicacion": "Vía Montenegro, Armenia",
+      "tipo": "Casa",
+      "capacidad": 8,
+      "habitaciones": 4,
+      "camas": 6,
+      "banos": 3,
+      "precioNoche": 460000,
+      "tarifaLimpieza": 80000,
+      "calificacion": 3.0,
+      "activo": true,
+      "imagenPrincipal": "assets/19.png",
+      "imagenes": [
+        "assets/19.png"
+      ],
+      "servicios": [
+        "Wi-Fi",
+        "Cocina",
+        "BBQ",
+        "Parqueadero",
+        "Piscina"
+      ],
+      "reglas": [
+        "No fumar",
+        "Máximo 8 huéspedes"
+      ]
+    },
+    {
+      "id": 20,
+      "nombre": "Casa termal en Paipa",
+      "descripcion": "Casa amplia y cálida cerca de los termales, equipada con sala de juegos y cocina completa.",
+      "ciudad": "Paipa",
+      "ubicacion": "Vía Termales, Paipa",
+      "tipo": "Casa",
+      "capacidad": 8,
+      "habitaciones": 4,
+      "camas": 6,
+      "banos": 3,
+      "precioNoche": 480000,
+      "tarifaLimpieza": 85000,
+      "calificacion": 4.4,
+      "activo": true,
+      "imagenPrincipal": "assets/20.jpg",
+      "imagenes": [
+        "assets/20.jpg"
+      ],
+      "servicios": [
+        "Wi-Fi",
+        "Cocina",
+        "Chimenea",
+        "Parqueadero",
+        "Gimnasio"
+      ],
+      "reglas": [
+        "No fiestas",
+        "Silencio después de las 10 PM",
+        "Máximo 8 huéspedes"
+      ]
+    },
+    {
+      "id": 21,
+      "nombre": "Casa moderna en Bucaramanga",
+      "descripcion": "Casa urbana de diseño contemporáneo, con espacios luminosos y zonas verdes comunes.",
+      "ciudad": "Bucaramanga",
+      "ubicacion": "Cabecera, Bucaramanga",
+      "tipo": "Casa",
+      "capacidad": 6,
+      "habitaciones": 3,
+      "camas": 4,
+      "banos": 2,
+      "precioNoche": 340000,
+      "tarifaLimpieza": 65000,
+      "calificacion": 4.3,
+      "activo": true,
+      "imagenPrincipal": "assets/21.jpg",
+      "imagenes": [
+        "assets/21.jpg"
+      ],
+      "servicios": [
+        "Wi-Fi",
+        "Piscina",
+        "Cocina",
+        "Parqueadero",
+        "Gimnasio"
+      ],
+      "reglas": [
+        "No fumar",
+        "No mascotas"
+      ]
+    },
+    {
+      "id": 22,
+      "nombre": "Casa campestre en Villa de Leyva",
+      "descripcion": "Hermosa casa de campo con amplios jardines y zona de descanso.",
+      "ciudad": "Villa de Leyva",
+      "ubicacion": "Zona rural, Villa de Leyva",
+      "tipo": "Casa",
+      "capacidad": 6,
+      "habitaciones": 3,
+      "camas": 4,
+      "banos": 2,
+      "precioNoche": 360000,
+      "tarifaLimpieza": 65000,
+      "calificacion": 4.5,
+      "activo": true,
+      "imagenPrincipal": "assets/22.webp",
+      "imagenes": [
+        "assets/22.webp"
+      ],
+      "servicios": [
+        "Wi-Fi",
+        "Cocina",
+        "Parqueadero",
+        "BBQ"
+      ],
+      "reglas": [
+        "No fumar",
+        "No mascotas"
+      ]
+    },
+    {
+      "id": 23,
+      "nombre": "Casa moderna en Pereira",
+      "descripcion": "Casa de diseño contemporáneo con piscina y excelente iluminación natural.",
+      "ciudad": "Pereira",
+      "ubicacion": "Circunvalar, Pereira",
+      "tipo": "Casa",
+      "capacidad": 8,
+      "habitaciones": 4,
+      "camas": 5,
+      "banos": 3,
+      "precioNoche": 490000,
+      "tarifaLimpieza": 85000,
+      "calificacion": 4.7,
+      "activo": true,
+      "imagenPrincipal": "assets/23.avif",
+      "imagenes": [
+        "assets/23.avif"
+      ],
+      "servicios": [
+        "Wi-Fi",
+        "Piscina",
+        "Cocina",
+        "Parqueadero",
+        "Aire acondicionado"
+      ],
+      "reglas": [
+        "No fumar",
+        "Máximo 8 huéspedes"
+      ]
+    }
+  ],
+  "resenas": [
+    {
+      "id": 1,
+      "alojamientoId": 1,
+      "usuario": "Laura Gómez",
+      "calificacion": 5,
+      "comentario": "Excelente ubicación y casa muy cómoda."
+    },
+    {
+      "id": 2,
+      "alojamientoId": 1,
+      "usuario": "Carlos Ruiz",
+      "calificacion": 5,
+      "comentario": "Muy buena experiencia, todo limpio y ordenado."
+    },
+    {
+      "id": 3,
+      "alojamientoId": 2,
+      "usuario": "Andrea López",
+      "calificacion": 5,
+      "comentario": "La vista es excelente y la ubicación muy conveniente."
+    },
+    {
+      "id": 4,
+      "alojamientoId": 3,
+      "usuario": "Miguel Torres",
+      "calificacion": 5,
+      "comentario": "Excelente lugar para descansar y desconectarse."
+    },
+    {
+      "id": 5,
+      "alojamientoId": 4,
+      "usuario": "Natalia Pérez",
+      "calificacion": 4,
+      "comentario": "La casa es amplia y está muy bien ubicada cerca de la plaza."
+    },
+    {
+      "id": 6,
+      "alojamientoId": 7,
+      "usuario": "Sofía Martínez",
+      "calificacion": 5,
+      "comentario": "El patio interior y la piscina son preciosos."
+    },
+    {
+      "id": 7,
+      "alojamientoId": 9,
+      "usuario": "Daniel Herrera",
+      "calificacion": 4,
+      "comentario": "Casa grande y cerca de la playa, ideal para ir en familia."
+    },
+    {
+      "id": 8,
+      "alojamientoId": 10,
+      "usuario": "Camila Rojas",
+      "calificacion": 5,
+      "comentario": "Un lugar tranquilo, con un café riquísimo en la mañana."
+    },
+    {
+      "id": 9,
+      "alojamientoId": 14,
+      "usuario": "Andrés Cárdenas",
+      "calificacion": 5,
+      "comentario": "El jacuzzi y la chimenea hicieron perfecta la escapada."
+    },
+    {
+      "id": 10,
+      "alojamientoId": 18,
+      "usuario": "Valentina Ortiz",
+      "calificacion": 5,
+      "comentario": "Excelente ubicación frente al mar y muy buen servicio."
+    },
+    {
+      "id": 11,
+      "alojamientoId": 22,
+      "usuario": "Esteban Morales",
+      "calificacion": 4,
+      "comentario": "Muy bonita la casa de Villa de Leyva, perfecta para descansar el fin de semana."
+    },
+    {
+      "id": 12,
+      "alojamientoId": 23,
+      "usuario": "Claudia Jimeno",
+      "calificacion": 5,
+      "comentario": "La casa en Pereira es hermosa, moderna y la piscina impecable."
+    }
+  ]
+}

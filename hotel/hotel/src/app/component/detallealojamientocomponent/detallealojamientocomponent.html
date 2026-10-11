@@ -1,0 +1,201 @@
+<div class="container py-4">
+
+    <!--     https://ics.media/en/entry/230629/ -->
+    <div style="display: flex; justify-content: flex-end;">
+
+        <a routerLink="/" class="button-outline-glow">
+            <span class="button-glow"></span>
+            <span class="button-content">
+      <span class="label">Volver a alojamientos</span>
+      <span class="icon-box">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </span>
+    </span>
+        </a>
+    </div>
+
+    @if (alojamiento(); as a) {
+        <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+            <h1 class="fw-bold mb-0">{{ a.nombre }}</h1>
+            <span class="badge bg-primary">{{ a.tipo }}</span>
+            <span class="badge bg-warning text-dark">
+                <i class="fa-solid fa-star"></i> {{ a.calificacion }}
+            </span>
+        </div>
+
+        <div class="row g-4">
+
+            <div class=" col-lg-7">
+                <img [src]="imagenActiva()" class=" imagenes detalle-img rounded shadow-sm mb-2" [alt]="a.nombre">
+                @if (imagenes().length > 1) {
+                    <div class="d-flex flex-wrap gap-2">
+                        @for (img of imagenes(); track img) {
+                            <img [src]="img" class="miniatura rounded border"
+                                 [class.miniatura-activa]="img === imagenActiva()"
+                                 [alt]="'Imagen de ' + a.nombre" (click)="seleccion.set(img)">
+                        }
+                    </div>
+                }
+
+                <h5 class="fw-bold mt-4">Descripción</h5>
+                <p>{{ a.descripcion }}</p>
+
+                <h5 class="fw-bold mt-4">Servicios disponibles</h5>
+                <div class="d-flex flex-wrap gap-1 mb-3">
+                    @for (s of a.servicios; track s) {
+                        <span class="badge bg-light text-dark border">{{ s }}</span>
+                    }
+                </div>
+
+                <h5 class="fw-bold mt-4">Reglas básicas</h5>
+                <ul>
+                    @for (r of a.reglas; track r) {
+                        <li>{{ r }}</li>
+                    }
+                </ul>
+            </div>
+
+
+            <div class="col-lg-5">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <p class="mb-3">
+                            <span class="text-primary fw-bold fs-3">
+                                {{ a.precioNoche | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}
+                            </span>
+                            <small class="text-muted"> / noche</small>
+                        </p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Ciudad</span><strong>{{ a.ciudad }}</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Dirección / ubicación</span><strong>{{ a.ubicacion }}</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Tipo de alojamiento</span><strong>{{ a.tipo }}</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Capacidad</span><strong>{{ a.capacidad }} huésped(es)</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Habitaciones</span><strong>{{ a.habitaciones }}</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Camas</span><strong>{{ a.camas }}</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Baños</span><strong>{{ a.banos }}</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Calificación</span>
+                                <strong>{{ a.calificacion }} <i class="fa-solid fa-star text-warning"></i></strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mt-3">
+                    <div class="card-body">
+                        <h5 class="fw-bold mb-3">Cotiza tu estancia</h5>
+
+                        <form [formGroup]="formCotizacion" (ngSubmit)="cotizar(a)" novalidate>
+                            <div class="row g-2 mb-2">
+                                <div class="col-6">
+                                    <label for="llegada" class="form-label small fw-bold">Llegada</label>
+                                    <input id="llegada" type="date" class="form-control"
+                                           formControlName="llegada" [min]="hoy">
+                                </div>
+                                <div class="col-6">
+                                    <label for="salida" class="form-label small fw-bold">Salida</label>
+                                    <input id="salida" type="date" class="form-control"
+                                           formControlName="salida" [min]="hoy">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="huespedes" class="form-label small fw-bold">
+                                    Huéspedes (máx. {{ a.capacidad }})
+                                </label>
+                                <input id="huespedes" type="number" class="form-control"
+                                       formControlName="huespedes" min="1" [max]="a.capacidad">
+                            </div>
+
+                            @if (erroresCotizacion().length > 0) {
+                                <div class="alert alert-danger small" role="alert">
+                                    <ul class="mb-0 ps-3">
+                                        @for (e of erroresCotizacion(); track e) {
+                                            <li>{{ e }}</li>
+                                        }
+                                    </ul>
+                                </div>
+                            }
+
+                            <button type="submit" class="btn btn-dark w-100">Cotizar</button>
+                        </form>
+
+                        @if (cotizacion(); as c) {
+                            <hr>
+                            <ul class="list-unstyled small mb-0">
+                                <li class="d-flex justify-content-between">
+                                    <span>{{ c.noches }} noche(s) × {{ c.precioNoche | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}</span>
+                                    <span>{{ c.subtotal | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}</span>
+                                </li>
+                                <li class="d-flex justify-content-between">
+                                    <span>Tarifa de limpieza</span>
+                                    <span>{{ c.tarifaLimpieza | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}</span>
+                                </li>
+                                <li class="d-flex justify-content-between">
+                                    <span>Tarifa de servicio (10 %)</span>
+                                    <span>{{ c.tarifaServicio | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}</span>
+                                </li>
+                                <li class="d-flex justify-content-between fw-bold fs-5 mt-2">
+                                    <span>Total</span>
+                                    <span class="text-primary">{{ c.total | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}</span>
+                                </li>
+                            </ul>
+                        }
+                    </div>
+                </div>
+
+
+                @if (cotizacion(); as c) {
+                    <div class="mt-3">
+                        <app-reserva [alojamiento]="a" [cotizacion]="c" />
+                    </div>
+                }
+            </div>
+        </div>
+
+
+        <h4 class="fw-bold mt-5 mb-3">Reseñas</h4>
+        @if (resenas().length === 0) {
+            <div class="alert alert-light border" role="status">Este alojamiento aún no tiene reseñas.</div>
+        } @else {
+            <div class="row g-3">
+                @for (r of resenas(); track r.id) {
+                    <div class="col-md-6">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <strong>{{ r.usuario }}</strong>
+                                    <span class="text-warning">
+                                        @for (e of estrellas(r.calificacion); track e) {
+                                            <i class="fa-solid fa-star"></i>
+                                        }
+                                    </span>
+                                </div>
+                                <p class="mb-0 text-muted">{{ r.comentario }}</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    } @else if (!cargando()) {
+        <div class="alert alert-warning" role="alert">
+            No encontramos este alojamiento o no está disponible.
+        </div>
+    }
+</div>
