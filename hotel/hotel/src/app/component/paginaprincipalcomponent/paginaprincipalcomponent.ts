@@ -88,7 +88,7 @@ export class Paginaprincipalcomponent {
   }
 
   verDetalle(id: number): void {
-    this.router.navigate(['/alojamiento', id]);
+    this.router.navigate(['/alojamientos', id]);
   }
 
   private cumple(a: Alojamiento, f: FiltrosAlojamiento): boolean {
