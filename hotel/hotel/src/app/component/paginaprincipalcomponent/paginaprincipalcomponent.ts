@@ -6,7 +6,6 @@ import { Alojamiento } from '../../models';
 import { AlojamientoService } from '../../services/alojamiento.service';
 import { FiltroService, FiltrosAlojamiento } from '../../services/filtro.service';
 
-/** Quita tildes, espacios y símbolos para comparar ("Wi-Fi" == "WiFi"). */
 const normalizar = (texto: string): string =>
     texto
         .normalize('NFD')
@@ -88,7 +87,7 @@ export class Paginaprincipalcomponent {
   }
 
   verDetalle(id: number): void {
-    this.router.navigate(['/alojamiento', id]);
+    this.router.navigate(['/alojamientos', id]);
   }
 
   private cumple(a: Alojamiento, f: FiltrosAlojamiento): boolean {
