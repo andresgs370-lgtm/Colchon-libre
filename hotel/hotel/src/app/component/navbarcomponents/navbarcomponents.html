@@ -29,33 +29,33 @@
     <h2>Filtrar alojamientos</h2>
 
     <div class="filtro">
-        <label for="idAlojamiento">ID del alojamiento</label>
+        <label for="filtro-idAlojamiento">ID del alojamiento</label>
         <input
                 type="number"
-                id="idAlojamiento"
+                id="filtro-idAlojamiento"
                 [(ngModel)]="idAlojamiento"
                 min="1"
                 placeholder="Ej. 1">
     </div>
 
     <div class="filtro">
-        <label for="imagen">Imagen</label>
-        <input type="file" id="imagen" accept="image/*">
+        <label for="filtro-imagen">Imagen</label>
+        <input type="file" id="filtro-imagen" accept="image/*">
     </div>
 
     <div class="filtro">
-        <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" [(ngModel)]="nombre" placeholder="Nombre del alojamiento">
+        <label for="filtro-nombre">Nombre</label>
+        <input type="text" id="filtro-nombre" [(ngModel)]="nombre" placeholder="Nombre del alojamiento">
     </div>
 
     <div class="filtro">
-        <label for="ciudad">Ciudad</label>
-        <input type="text" id="ciudad" [(ngModel)]="ciudad" placeholder="Ciudad">
+        <label for="filtro-ciudad">Ciudad</label>
+        <input type="text" id="filtro-ciudad" [(ngModel)]="ciudad" placeholder="Ciudad">
     </div>
 
     <div class="filtro">
-        <label for="tipoAlojamiento">Tipo de alojamiento</label>
-        <select id="tipoAlojamiento" [(ngModel)]="tipoAlojamiento">
+        <label for="filtro-tipoAlojamiento">Tipo de alojamiento</label>
+        <select id="filtro-tipoAlojamiento" [(ngModel)]="tipoAlojamiento">
             <option value="Todos">Todos</option>
             <option value="Hotel">Hotel</option>
             <option value="Apartamento">Apartamento</option>
@@ -64,21 +64,21 @@
     </div>
 
     <div class="filtro">
-        <label for="capacidad">Capacidad</label>
-        <input type="number" id="capacidad" [(ngModel)]="capacidad" min="1" placeholder="Número de personas">
+        <label for="filtro-capacidad">Capacidad</label>
+        <input type="number" id="filtro-capacidad" [(ngModel)]="capacidad" min="1" placeholder="Número de personas">
     </div>
 
     <div class="filtro">
-        <label for="precioMinimo">Precio por noche</label>
+        <label for="filtro-precioMinimo">Precio por noche</label>
         <div class="precio">
-            <input type="number" id="precioMinimo" [(ngModel)]="precioMinimo" min="0" placeholder="Mínimo">
-            <input type="number" id="precioMaximo" [(ngModel)]="precioMaximo" min="0" placeholder="Máximo">
+            <input type="number" id="filtro-precioMinimo" [(ngModel)]="precioMinimo" min="0" placeholder="Mínimo">
+            <input type="number" id="filtro-precioMaximo" [(ngModel)]="precioMaximo" min="0" placeholder="Máximo">
         </div>
     </div>
 
     <div class="filtro">
-        <label for="calificacion">Calificación</label>
-        <select id="calificacion" [(ngModel)]="calificacion">
+        <label for="filtro-calificacion">Calificación</label>
+        <select id="filtro-calificacion" [(ngModel)]="calificacion">
             <option value="Todas">Todas</option>
             <option value="5">5 estrellas</option>
             <option value="4">4 estrellas o más</option>

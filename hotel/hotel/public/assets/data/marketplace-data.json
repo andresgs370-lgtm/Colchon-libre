@@ -2,48 +2,50 @@
   "alojamientos": [
     {
       "id": 1,
-      "nombre": "Loft moderno en Chapinero",
-      "descripcion": "Loft moderno ubicado cerca de restaurantes, cafés y zonas comerciales de Bogotá.",
+      "nombre": "Apartamento moderno en Chapinero",
+      "descripcion": "Apartamento dúplex moderno ubicado cerca de restaurantes, cafés y zonas comerciales de Bogotá.",
       "ciudad": "Bogotá",
       "ubicacion": "Chapinero, Bogotá",
       "tipo": "Apartamento",
-      "capacidad": 2,
-      "habitaciones": 1,
-      "camas": 1,
-      "banos": 1,
-      "precioNoche": 180000,
-      "tarifaLimpieza": 45000,
+      "capacidad": 6,
+      "habitaciones": 3,
+      "camas": 4,
+      "banos": 2,
+      "precioNoche": 320000,
+      "tarifaLimpieza": 60000,
       "calificacion": 4.8,
       "activo": true,
       "imagenPrincipal": "assets/1.png",
       "imagenes": [
-        "assets/2.jpg",
-        "assets/3.jpg"
+        "assets/1.jpg"
+
       ],
       "servicios": [
         "Wi-Fi",
         "Cocina",
         "Televisión",
-        "Lavadora"
+        "Lavadora",
+        "Parqueadero"
       ],
       "reglas": [
         "No fumar",
-        "No se permiten fiestas"
+        "No se permiten fiestas",
+        "Máximo 6 huéspedes"
       ]
     },
     {
       "id": 2,
       "nombre": "Apartamento frente al mar",
-      "descripcion": "Apartamento con vista al mar ubicado en una zona turística de Cartagena.",
+      "descripcion": "Apartamento amplio con vista directa al mar ubicado en una zona exclusiva de Cartagena.",
       "ciudad": "Cartagena",
       "ubicacion": "Bocagrande, Cartagena",
       "tipo": "Apartamento",
-      "capacidad": 5,
-      "habitaciones": 2,
-      "camas": 3,
-      "banos": 2,
-      "precioNoche": 420000,
-      "tarifaLimpieza": 70000,
+      "capacidad": 8,
+      "habitaciones": 4,
+      "camas": 6,
+      "banos": 3,
+      "precioNoche": 650000,
+      "tarifaLimpieza": 90000,
       "calificacion": 4.9,
       "activo": true,
       "imagenPrincipal": "assets/2.jpg",
@@ -59,22 +61,23 @@
       ],
       "reglas": [
         "No fumar",
-        "No mascotas"
+        "No mascotas",
+        "Máximo 8 huéspedes"
       ]
     },
     {
       "id": 3,
       "nombre": "Cabaña en Guatapé",
-      "descripcion": "Cabaña rodeada de naturaleza con vista al embalse de Guatapé.",
+      "descripcion": "Cabaña rodeada de naturaleza con amplio jardín y vista panorámica al embalse de Guatapé.",
       "ciudad": "Guatapé",
       "ubicacion": "Guatapé, Antioquia",
       "tipo": "Cabaña",
-      "capacidad": 6,
-      "habitaciones": 3,
-      "camas": 4,
-      "banos": 2,
-      "precioNoche": 350000,
-      "tarifaLimpieza": 60000,
+      "capacidad": 8,
+      "habitaciones": 4,
+      "camas": 5,
+      "banos": 3,
+      "precioNoche": 500000,
+      "tarifaLimpieza": 80000,
       "calificacion": 4.7,
       "activo": true,
       "imagenPrincipal": "assets/3.jpg",
@@ -89,13 +92,14 @@
       ],
       "reglas": [
         "No fumar",
-        "Silencio después de las 10 PM"
+        "Silencio después de las 10 PM",
+        "Máximo 8 huéspedes"
       ]
     },
     {
       "id": 4,
       "nombre": "Casa colonial en Villa de Leyva",
-      "descripcion": "Casa de estilo colonial localizada cerca de la plaza principal.",
+      "descripcion": "Casa tradicional de estilo colonial con patio central, localizada cerca de la plaza principal.",
       "ciudad": "Villa de Leyva",
       "ubicacion": "Centro histórico",
       "tipo": "Casa",
@@ -124,17 +128,17 @@
     },
     {
       "id": 5,
-      "nombre": "Apartamento ejecutivo Medellín",
-      "descripcion": "Apartamento moderno cercano a zonas comerciales y empresariales.",
+      "nombre": "Casa ejecutiva en Medellín",
+      "descripcion": "Casa moderna y elegante cercana a zonas comerciales y empresariales de El Poblado.",
       "ciudad": "Medellín",
       "ubicacion": "El Poblado, Medellín",
-      "tipo": "Apartamento",
-      "capacidad": 3,
-      "habitaciones": 1,
-      "camas": 2,
-      "banos": 1,
-      "precioNoche": 230000,
-      "tarifaLimpieza": 50000,
+      "tipo": "Casa",
+      "capacidad": 6,
+      "habitaciones": 3,
+      "camas": 4,
+      "banos": 2,
+      "precioNoche": 420000,
+      "tarifaLimpieza": 70000,
       "calificacion": 4.5,
       "activo": true,
       "imagenPrincipal": "assets/5.png",
@@ -148,22 +152,23 @@
         "Parqueadero"
       ],
       "reglas": [
-        "No fumar"
+        "No fumar",
+        "Máximo 6 huéspedes"
       ]
     },
     {
       "id": 6,
-      "nombre": "Casa campestre",
-      "descripcion": "Casa campestre actualmente fuera de servicio.",
+      "nombre": "Casa campestre tradicional",
+      "descripcion": "Casa campestre tradicional rodeada de árboles frutales, actualmente fuera de servicio.",
       "ciudad": "Armenia",
       "ubicacion": "Zona rural",
       "tipo": "Casa",
-      "capacidad": 10,
-      "habitaciones": 5,
-      "camas": 7,
-      "banos": 4,
-      "precioNoche": 650000,
-      "tarifaLimpieza": 120000,
+      "capacidad": 8,
+      "habitaciones": 4,
+      "camas": 6,
+      "banos": 3,
+      "precioNoche": 480000,
+      "tarifaLimpieza": 100000,
       "calificacion": 4.4,
       "activo": false,
       "imagenPrincipal": "assets/6.jpg",
@@ -176,7 +181,8 @@
         "BBQ"
       ],
       "reglas": [
-        "No fiestas"
+        "No fiestas",
+        "Máximo 8 huéspedes"
       ]
     },
     {
@@ -272,11 +278,11 @@
     },
     {
       "id": 10,
-      "nombre": "Casa campestre entre cafetales",
-      "descripcion": "Casa de madera y mampostería rodeada de cultivos de café, ideal para desconectarse en familia.",
+      "nombre": "Cabaña entre cafetales",
+      "descripcion": "Cabaña de madera y mampostería rodeada de cultivos de café, ideal para desconectarse en familia.",
       "ciudad": "Salento",
       "ubicacion": "Vereda Boquía, Salento",
-      "tipo": "Casa",
+      "tipo": "Cabaña",
       "capacidad": 6,
       "habitaciones": 3,
       "camas": 4,
@@ -303,11 +309,11 @@
     },
     {
       "id": 11,
-      "nombre": "Casa ejecutiva en El Poblado",
-      "descripcion": "Casa moderna de diseño abierto pensada para estancias largas y grupos de trabajo.",
+      "nombre": "Apartamento ejecutivo en El Poblado",
+      "descripcion": "Apartamento moderno de diseño abierto pensado para estancias largas y grupos de trabajo.",
       "ciudad": "Medellín",
       "ubicacion": "El Poblado, Medellín",
-      "tipo": "Casa",
+      "tipo": "Apartamento",
       "capacidad": 6,
       "habitaciones": 3,
       "camas": 4,
@@ -364,11 +370,11 @@
     },
     {
       "id": 13,
-      "nombre": "Casa familiar en Barranquilla",
-      "descripcion": "Casa amplia y ventilada, ubicada a pocos minutos de zonas residenciales y comerciales.",
+      "nombre": "Apartamento familiar en Barranquilla",
+      "descripcion": "Apartamento amplio y ventilado, ubicado a pocos minutos de zonas residenciales y comerciales.",
       "ciudad": "Barranquilla",
       "ubicacion": "Alto Prado, Barranquilla",
-      "tipo": "Casa",
+      "tipo": "Apartamento",
       "capacidad": 6,
       "habitaciones": 3,
       "camas": 4,
@@ -394,11 +400,11 @@
     },
     {
       "id": 14,
-      "nombre": "Casa campestre con jacuzzi en Guasca",
-      "descripcion": "Casa de montaña con jacuzzi al aire libre y chimenea interior, a una hora de Bogotá.",
+      "nombre": "Cabaña con jacuzzi en Guasca",
+      "descripcion": "Cabaña de montaña con jacuzzi al aire libre y chimenea interior, a una hora de Bogotá.",
       "ciudad": "Guasca",
       "ubicacion": "Vereda La Concepción, Guasca",
-      "tipo": "Casa",
+      "tipo": "Cabaña",
       "capacidad": 4,
       "habitaciones": 2,
       "camas": 3,
@@ -482,11 +488,11 @@
     },
     {
       "id": 17,
-      "nombre": "Casa urbana frente al parque en Cali",
-      "descripcion": "Casa cómoda frente a un parque arbolado, cerca de la zona gastronómica y cultural.",
+      "nombre": "Apartamento frente al parque en Cali",
+      "descripcion": "Apartamento cómodo frente a un parque arbolado, cerca de la zona gastronómica y cultural.",
       "ciudad": "Cali",
       "ubicacion": "Granada, Cali",
-      "tipo": "Casa",
+      "tipo": "Apartamento",
       "capacidad": 6,
       "habitaciones": 3,
       "camas": 4,
@@ -543,11 +549,11 @@
     },
     {
       "id": 19,
-      "nombre": "Casa campestre en el Eje Cafetero",
-      "descripcion": "Casa familiar rodeada de naturaleza, cerca de rutas de senderismo y parques temáticos.",
+      "nombre": "Cabaña en el Eje Cafetero",
+      "descripcion": "Cabaña familiar rodeada de naturaleza, cerca de rutas de senderismo y parques temáticos.",
       "ciudad": "Armenia",
       "ubicacion": "Vía Montenegro, Armenia",
-      "tipo": "Casa",
+      "tipo": "Cabaña",
       "capacidad": 8,
       "habitaciones": 4,
       "camas": 6,
@@ -574,11 +580,11 @@
     },
     {
       "id": 20,
-      "nombre": "Casa termal en Paipa",
-      "descripcion": "Casa amplia y cálida cerca de los termales, equipada con sala de juegos y cocina completa.",
+      "nombre": "Cabaña termal en Paipa",
+      "descripcion": "Cabaña amplia y cálida cerca de los termales, equipada con sala de juegos y cocina completa.",
       "ciudad": "Paipa",
       "ubicacion": "Vía Termales, Paipa",
-      "tipo": "Casa",
+      "tipo": "Cabaña",
       "capacidad": 8,
       "habitaciones": 4,
       "camas": 6,
@@ -606,11 +612,11 @@
     },
     {
       "id": 21,
-      "nombre": "Casa moderna en Bucaramanga",
-      "descripcion": "Casa urbana de diseño contemporáneo, con espacios luminosos y zonas verdes comunes.",
+      "nombre": "Apartamento moderno en Bucaramanga",
+      "descripcion": "Apartamento urbano de diseño contemporáneo, con espacios luminosos y zonas verdes comunes.",
       "ciudad": "Bucaramanga",
       "ubicacion": "Cabecera, Bucaramanga",
-      "tipo": "Casa",
+      "tipo": "Apartamento",
       "capacidad": 6,
       "habitaciones": 3,
       "camas": 4,
@@ -781,6 +787,146 @@
       "usuario": "Claudia Jimeno",
       "calificacion": 5,
       "comentario": "La casa en Pereira es hermosa, moderna y la piscina impecable."
+    },
+    {
+      "id": 13,
+      "alojamientoId": 2,
+      "usuario": "Julián Restrepo",
+      "calificacion": 5,
+      "comentario": "Despertar con esa vista al mar no tiene precio. El apartamento estaba impecable."
+    },
+    {
+      "id": 14,
+      "alojamientoId": 3,
+      "usuario": "Paula Giraldo",
+      "calificacion": 5,
+      "comentario": "La cabaña es acogedora y la vista al embalse es espectacular."
+    },
+    {
+      "id": 15,
+      "alojamientoId": 4,
+      "usuario": "Ricardo Suárez",
+      "calificacion": 5,
+      "comentario": "El patio central es hermoso y se llega caminando a la plaza."
+    },
+    {
+      "id": 16,
+      "alojamientoId": 5,
+      "usuario": "Mariana Vélez",
+      "calificacion": 5,
+      "comentario": "Elegante, cómoda y muy cerca de todo en El Poblado."
+    },
+    {
+      "id": 17,
+      "alojamientoId": 5,
+      "usuario": "Felipe Arango",
+      "calificacion": 4,
+      "comentario": "Muy buena casa para un viaje de trabajo, aunque el parqueadero es algo estrecho."
+    },
+    {
+      "id": 18,
+      "alojamientoId": 8,
+      "usuario": "Diana Castro",
+      "calificacion": 5,
+      "comentario": "La vista a los cerros es increíble y el jardín es muy tranquilo."
+    },
+    {
+      "id": 19,
+      "alojamientoId": 8,
+      "usuario": "Óscar Benítez",
+      "calificacion": 4,
+      "comentario": "Casa luminosa y cómoda. En las noches hace bastante frío, lleven abrigo."
+    },
+    {
+      "id": 20,
+      "alojamientoId": 9,
+      "usuario": "Luisa Fernanda Mejía",
+      "calificacion": 5,
+      "comentario": "Las hamacas y la piscina fueron lo mejor del viaje. Volveríamos sin dudarlo."
+    },
+    {
+      "id": 21,
+      "alojamientoId": 11,
+      "usuario": "Sebastián Londoño",
+      "calificacion": 4,
+      "comentario": "Buen apartamento para trabajar en grupo, el internet es rápido. El desayuno es sencillo."
+    },
+    {
+      "id": 22,
+      "alojamientoId": 12,
+      "usuario": "Carolina Pardo",
+      "calificacion": 4,
+      "comentario": "A los niños les encantó la piscina. A algunos muebles les hace falta mantenimiento."
+    },
+    {
+      "id": 23,
+      "alojamientoId": 13,
+      "usuario": "Jorge Mendoza",
+      "calificacion": 4,
+      "comentario": "Amplio y fresco, con buen aire acondicionado. Se escucha algo de ruido de la calle."
+    },
+    {
+      "id": 24,
+      "alojamientoId": 16,
+      "usuario": "Isabella Quintero",
+      "calificacion": 5,
+      "comentario": "Una casa con muchísimo encanto, y Barichara es un pueblo precioso."
+    },
+    {
+      "id": 25,
+      "alojamientoId": 16,
+      "usuario": "Mauricio Peña",
+      "calificacion": 4,
+      "comentario": "Muy bonita y bien ubicada. El desayuno estuvo rico, aunque poco variado."
+    },
+    {
+      "id": 26,
+      "alojamientoId": 17,
+      "usuario": "Tatiana Ospina",
+      "calificacion": 3,
+      "comentario": "La ubicación es buena, pero el apartamento necesita mantenimiento y el aire hacía ruido."
+    },
+    {
+      "id": 27,
+      "alojamientoId": 17,
+      "usuario": "Hernán Salazar",
+      "calificacion": 3,
+      "comentario": "Cumple con lo básico. El gimnasio estaba cerrado y la limpieza fue regular."
+    },
+    {
+      "id": 28,
+      "alojamientoId": 19,
+      "usuario": "Gloria Patiño",
+      "calificacion": 3,
+      "comentario": "El paisaje es muy lindo, pero la piscina estaba descuidada y el Wi-Fi casi no funcionó."
+    },
+    {
+      "id": 29,
+      "alojamientoId": 19,
+      "usuario": "Camilo Acosta",
+      "calificacion": 3,
+      "comentario": "Buena ubicación para ir a los parques, pero la cabaña no se ve como en las fotos."
+    },
+    {
+      "id": 30,
+      "alojamientoId": 20,
+      "usuario": "Adriana Niño",
+      "calificacion": 4,
+      "comentario": "Muy cálida y cerca de los termales. La sala de juegos entretuvo a toda la familia."
+    },
+    {
+      "id": 31,
+      "alojamientoId": 21,
+      "usuario": "Santiago Rueda",
+      "calificacion": 4,
+      "comentario": "Apartamento moderno y bien iluminado. La piscina es compartida y a veces está llena."
+    },
+    {
+      "id": 32,
+      "alojamientoId": 23,
+      "usuario": "Manuela Zapata",
+      "calificacion": 5,
+      "comentario": "Diseño hermoso, mucha luz natural y la piscina en perfecto estado."
     }
   ]
 }
