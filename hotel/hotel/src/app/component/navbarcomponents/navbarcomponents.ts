@@ -10,10 +10,8 @@ import { FiltroService } from '../../services/filtro.service';
 export class Navbarcomponents {
 
   private readonly filtroService = inject(FiltroService);
-
+  idAlojamiento: number | null = null;
   mostrarFiltros: boolean = false;
-
-
   nombre: string = '';
 
   ciudad: string = '';
@@ -104,6 +102,7 @@ export class Navbarcomponents {
     );
 
     this.filtroService.aplicar({
+      idAlojamiento: this.idAlojamiento,
       nombre: this.nombre,
       ciudad: this.ciudad,
       tipo: this.tipoAlojamiento,
@@ -127,6 +126,7 @@ export class Navbarcomponents {
 
   limpiarFiltros(): void {
 
+    this.idAlojamiento = null;
     this.nombre = '';
 
     this.ciudad = '';

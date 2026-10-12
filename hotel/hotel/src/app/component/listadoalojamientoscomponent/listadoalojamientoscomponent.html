@@ -70,6 +70,25 @@
                     placeholder="Sin límite">
             </div>
 
+
+            <div class="campo campo-buscar-id">
+                <label for="idAlojamiento">ID del alojamiento</label>
+                <input
+                        id="idAlojamiento"
+                        type="number"
+                        min="1"
+                        [(ngModel)]="idAlojamiento"
+                        placeholder="Ej. 1">
+
+                <button
+                        type="button"
+                        class="btn-principal"
+                        (click)="aplicarFiltros()">
+                    Buscar por ID
+                </button>
+            </div>
+
+
         </div>
 
         <div class="seccion-servicios">
@@ -147,6 +166,18 @@
 
         <div class="encabezado-resultados">
             <h2>Alojamientos disponibles</h2>
+            <p
+                    class="mensaje-error"
+                    role="alert"
+                    *ngIf="
+        !cargando &&
+        !error &&
+        filtroService.filtros().idAlojamiento !== null &&
+        alojamientosFiltrados.length === 0
+    ">
+                No encontramos ningún alojamiento con ese ID.
+                Verifica el número e inténtalo de nuevo.
+            </p>
 
             <span *ngIf="!cargando && !error">
                 {{ alojamientosFiltrados.length }}

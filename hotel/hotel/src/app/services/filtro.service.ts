@@ -1,6 +1,7 @@
 import { Injectable, computed, signal } from '@angular/core';
 
 export interface FiltrosAlojamiento {
+    idAlojamiento: number | null;
     nombre: string;
     ciudad: string;
     tipo: string;
@@ -12,6 +13,7 @@ export interface FiltrosAlojamiento {
 }
 
 const FILTROS_VACIOS: FiltrosAlojamiento = {
+    idAlojamiento: null,
     nombre: '',
     ciudad: '',
     tipo: 'Todos',
@@ -33,6 +35,7 @@ export class FiltroService {
         return (
             !!f.nombre.trim() ||
             !!f.ciudad.trim() ||
+            f.idAlojamiento !== null ||
             f.tipo !== 'Todos' ||
             f.capacidad > 1 ||
             f.precioMinimo > 0 ||
